@@ -37,6 +37,8 @@ export class Background extends Component {
         item.setPosition(x, y);
         item.addComponent(UITransform).contentSize = math.size(config.blockWidth, config.blockHeight);
         return item;
+
+        console.log("测试测试")
     }
 
     protected onDestroy(): void {
