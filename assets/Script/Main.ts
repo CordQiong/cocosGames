@@ -122,6 +122,7 @@ export class Main extends Component {
                 this.changeCurrentShapePos(math.v2(0, 1))
                 break;
             case KeyCode.ARROW_DOWN:
+                // 添加快速下落
                 // this.changeCurrentShapePos(math.v2(1, 0))
                 this.fastDown();
                 break;
