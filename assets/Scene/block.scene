@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.SceneAsset",
-    "_name": "main",
+    "_name": "block",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_native": "",
@@ -11,7 +11,7 @@
   },
   {
     "__type__": "cc.Scene",
-    "_name": "main",
+    "_name": "block",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": null,
@@ -1911,7 +1911,7 @@
     "_id": "9b8XN/omxFV4Dg7sFPvf89"
   },
   {
-    "__type__": "e0894BZmz5NwJhfq9WQqbbm",
+    "__type__": "da480qVdqFNTZhxH7gDX6/U",
     "_name": "",
     "_objFlags": 0,
     "__editorExtras__": {},
@@ -1926,10 +1926,10 @@
     "endPanel": {
       "__id__": 34
     },
-    "_id": "e2R3hZsKpIFbK4B+9lxMXQ"
+    "_id": "00i6Ofp0VHFpPR9Nq/mImT"
   },
   {
-    "__type__": "ee8b1ev1yVDFq+4xX4pXBHF",
+    "__type__": "7f7ebjS2VtINIkslZ9v65Le",
     "_name": "",
     "_objFlags": 0,
     "__editorExtras__": {},
@@ -1982,7 +1982,7 @@
     "backgroundPanel": {
       "__id__": 4
     },
-    "_id": "66hQtv1KJEbrEFElD6PB8x"
+    "_id": "68zwVTiadNWZtOowgT2UXz"
   },
   {
     "__type__": "cc.Camera",
