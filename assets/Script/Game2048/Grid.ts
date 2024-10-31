@@ -4,13 +4,14 @@ const { ccclass, property } = _decorator;
 
 @ccclass('Grid')
 export class Grid extends Component {
-    private cells: Node[];
+    public cells: Node[];
 
 
     private size: number;
 
     public setup(size: number): void {
         this.size = size;
+        this.cells = this.empty();
     }
 
 
@@ -92,20 +93,25 @@ export class Grid extends Component {
         return !!this.availableCells().length;
     }
 
+    public insertTile(tile: Node, pos?: Vec2): void;
     /**
      * 插入一个格子块
      * @param tile 
      */
-    public insertTile(tile: Tile): void {
-        this.cells[tile.positionX][tile.positionY] = tile;
+    public insertTile(tile: Node, pos?: Vec2): void {
+        const tp: Tile = tile.getComponent(Tile);
+        const x: number = pos ? pos.x : tp.positionX;
+        const y: number = pos ? pos.y : tp.positionY;
+        this.cells[x][y] = tile;
     }
 
     /**
      * 移除一个格子块
      * @param tile 
      */
-    public removeTile(tile: Tile): void {
-        this.cells[tile.positionX][tile.positionY] = null;
+    public removeTile(tile: Node): void {
+        const tp: Tile = tile.getComponent(Tile);
+        this.cells[tp.positionX][tp.positionY] = null;
     }
 
     /**
@@ -118,6 +124,27 @@ export class Grid extends Component {
             return this.cells[vector.x][vector.y];
         }
         return null;
+    }
+
+    public getCellTile(vector: Vec2): Tile {
+        const node: Node = this.getCellContent(vector);
+        if (!node) {
+            return null;
+        }
+        return node.getComponent(Tile);
+    }
+
+    /**
+     * 获取格子值
+     * @param vector 
+     * @returns 
+     */
+    public getCellValue(vector: Vec2): number {
+        const node: Node = this.getCellContent(vector);
+        if (!node) {
+            return 0;
+        }
+        return node.getComponent(Tile) ? node.getComponent(Tile).value : 0;
     }
 
     /**
@@ -147,6 +174,20 @@ export class Grid extends Component {
             size: this.size,
             cells: cellState
         };
+    }
+
+    public printGrid(): void {
+        let str: string = "";
+        for (var x = 0; x < this.size; x++) {
+            const lineValues: number[] = [];
+            for (var y = 0; y < this.size; y++) {
+                const node: Node = this.cells[x][y];
+                const value: number = node && node.getComponent(Tile) ? node.getComponent(Tile).value : 0;
+                lineValues.push(value);
+            }
+            str += lineValues.join(",") + "\n";
+        }
+        console.log(str);
     }
 
     onLoad(): void {
