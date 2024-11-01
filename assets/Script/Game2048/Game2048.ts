@@ -1,6 +1,6 @@
 import { _decorator, Component, math, Node, Vec2, Vertex } from 'cc';
 import { Grid } from './Grid';
-import { DirectionType } from './Game2048Enum';
+import { config2048, DirectionType } from './Game2048Enum';
 import { Tile } from './Tile';
 import { TouchEvent } from '../Common/Enum';
 const { ccclass, property } = _decorator;
@@ -31,17 +31,23 @@ export class Game2048 extends Component {
 
     private grid: Grid;
 
-    private startTiles: number = 2;
+    private startTiles: number;
 
-    private readonly size: number = 4;
+    private size: number;
     start() {
+        this.size = config2048.size;
+        this.startTiles = config2048.startTiles;
+
         this.grid = this.node.addComponent(Grid);
         this.grid.setup(this.size);
 
         this.addStartTiles();
-
+        this.grid.initNode().then(() => {
+            this.grid.render();
+            this.grid.printGrid();
+        })
         // console.log(this.serialize());
-        this.grid.printGrid();
+
     }
 
     update(deltaTime: number) {
@@ -88,32 +94,23 @@ export class Game2048 extends Component {
     }
 
     private prepareTiles(): void {
-        this.grid.foreachCell((x: number, y: number, tile: Node) => {
+        this.grid.foreachCell((x: number, y: number, tile: Tile) => {
             if (tile) {
-                const tileSp: Tile = tile.getComponent(Tile);
-                tileSp.megreFrom = null;
-                tileSp.savePosition();
+                tile.megreFrom = null;
+                tile.savePosition();
             }
         })
     }
 
-    private moveTile(tile: Node, cell: Vec2): void {
-        this.grid.removeTile(tile);
-        this.grid.insertTile(tile, cell);
-    }
+    // private moveTile(tile: Node, cell: Vec2): void {
+    //     this.grid.removeTile(tile);
+    //     this.grid.insertTile(tile, cell);
+    // }
 
     private addStartTiles(): void {
         for (let i = 0; i < this.startTiles; i++) {
-            // this.addRandomTile();
-            if (this.grid.checkCellsAvailable()) {
-                const value: number = Math.random() < 0.9 ? 2 : 4;
-                const tile = this.createTile(math.v2(0, i), value);
-                this.grid.insertTile(tile);
-            }
-
+            this.addRandomTile();
         }
-
-
     }
 
     private addRandomTile(): void {
@@ -160,23 +157,35 @@ export class Game2048 extends Component {
         if (!next) {
             return;
         }
-        const cellNode: Node = this.grid.getCellContent(cellPos);
+        const cellTile: Tile = this.grid.getCellContent(cellPos);
         const { pos, value } = next;
-        let nextNode: Node = this.grid.getCellContent(pos);
+        let nextTile: Tile = this.grid.getCellContent(pos);
         if (cellValue == 0) {
-            this.grid.cells[pos.x][pos.y] = cellNode;
-            this.grid.cells[cellPos.x][cellPos.y] = nextNode;
+            // this.grid.cells[pos.x][pos.y] = cellNode;
+            // this.grid.cells[cellPos.x][cellPos.y] = nextNode;
+            this.grid.insertTile(cellTile, pos);
+            this.grid.insertTile(nextTile, math.v2(cellPos.x, cellPos.y));
+
+
             this.cale(cellPos, direction);
         } else if (cellValue === value) {
-            const mergedNode: Node = this.createTile(pos, value * 2);
-            this.grid.cells[pos.x][pos.y] = null;
-            this.grid.cells[cellPos.x][cellPos.y] = mergedNode;
+            const mergedTile: Tile = this.createTile(pos, value * 2);
+            // let mergedTile: Tile = mergedNode.getComponent(Tile);
+            mergedTile.megreFrom = [cellTile, nextTile];
+            // this.grid.cells[pos.x][pos.y] = null;
+            // this.grid.cells[cellPos.x][cellPos.y] = mergedNode;
+            this.grid.removeTile(null, pos);
+            this.grid.insertTile(mergedTile, math.v2(cellPos.x, cellPos.y));
+            // this.grid.removeTile()
+
         }
         const nextPos = this.nextPos(cellPos, direction);
         this.cale(nextPos.pos, direction)
     }
 
     public move(direction: DirectionType): void {
+
+        this.prepareTiles();
 
         if (direction == DirectionType.UP) {
             for (let i = 0; i < this.size; i++) {
@@ -197,53 +206,8 @@ export class Game2048 extends Component {
         }
 
         this.addRandomTile();
+        this.grid.render();
         this.grid.printGrid();
-        // const vector: Vec2 = this.getVector(direction);
-        // const traversals = this.buildTraversals(vector);
-
-        // let cell: Vec2 = new Vec2(0, 0);
-        // let tile: Node = null;
-        // let moved: boolean = false;
-        // this.prepareTiles();
-
-
-        // for (let i = 0; i < traversals.x.length; i++) {
-        //     const x: number = traversals.x[i];
-        //     for (let j = 0; j < traversals.y.length; j++) {
-        //         const y: number = traversals.y[j];
-        //         cell.set(x, y);
-        //         tile = this.grid.getCellContent(cell);
-        //         if (tile) {
-        //             const tileSp: Tile = tile.getComponent(Tile);
-        //             const positions = this.findFarthestPoint(cell, vector);
-        //             const nextTile: Node = this.grid.getCellContent(positions.next);
-        //             const nextTileSp: Tile = nextTile && nextTile.getComponent(Tile);
-        //             if (nextTile && nextTileSp && nextTileSp.value === tileSp.value && !nextTileSp.megreFrom) {
-        //                 let merged = this.createTile(positions.next, tileSp.value * 2);
-        //                 let mergedTile: Tile = merged.getComponent(Tile);
-        //                 mergedTile.megreFrom = [tile, nextTile];
-
-        //                 this.grid.insertTile(merged);
-        //                 this.grid.removeTile(tile);
-
-        //                 tileSp.updatePosition(positions.next);
-        //             } else {
-        //                 this.moveTile(tile, positions.farthest)
-        //             }
-
-        //             if (!this.positionsEqual(cell, math.v2(tileSp.positionX, tileSp.positionY))) {
-        //                 moved = true;
-        //             }
-        //         }
-        //     }
-        // }
-
-
-        // // if (moved) {
-        // //     this.serialize();
-        // // }
-
-        // console.log(this.serialize());
     }
 
 
@@ -252,11 +216,10 @@ export class Game2048 extends Component {
         return first.x === second.x && first.y === second.y;
     }
 
-    private createTile(pos: Vec2, value: number): Node {
-        const node: Node = new Node();
-        const tile: Tile = node.addComponent(Tile);
+    private createTile(pos: Vec2, value: number): Tile {
+        const tile: Tile = new Tile();
         tile.setup(pos, value);
-        return node;
+        return tile;
     }
 
     public serialize(): any {

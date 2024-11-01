@@ -1,17 +1,43 @@
-import { _decorator, Component, math, Node, Vec2 } from 'cc';
+import { _decorator, Asset, assetManager, AssetManager, Component, error, instantiate, Label, math, Node, Prefab, resources, Sprite, SpriteAtlas, SpriteFrame, UITransform, utils, Vec2 } from 'cc';
 import { Tile } from './Tile';
+import { config2048 } from './Game2048Enum';
+import AssetMgr from '../Common/AssetMgr';
 const { ccclass, property } = _decorator;
 
 @ccclass('Grid')
 export class Grid extends Component {
-    public cells: Node[];
+    private cells: Tile[][];
 
+    private cellNodeArray: Node[][];
 
     private size: number;
+
 
     public setup(size: number): void {
         this.size = size;
         this.cells = this.empty();
+        // this.initNode()
+    }
+
+    public async initNode() {
+        this.cellNodeArray = [];
+        if (!this.cells || !this.cells.length) {
+            return;
+        }
+        const height: number = config2048.size * config2048.tileHight;
+        const width: number = config2048.size * config2048.tileWidth;
+        for (let i = 0; i < this.cells.length; i++) {
+            const row: Tile[] = this.cells[i];
+            this.cellNodeArray[i] = [];
+            for (let j = 0; j < row.length; j++) {
+                const node: Node = await this.createNode(0);
+                const x: number = - width / 2 + config2048.tileWidth / 2 + j * config2048.tileWidth;
+                const y: number = height / 2 - config2048.tileHight / 2 - i * config2048.tileHight;
+                node.setPosition(x, y);
+                node.parent = this.node;
+                this.cellNodeArray[i][j] = node;
+            }
+        }
     }
 
 
@@ -19,11 +45,14 @@ export class Grid extends Component {
      * 获取一个空的棋盘
      * @returns 
      */
-    public empty(): Node[] {
+    public empty(): Tile[][] {
+
         let cells = [];
-        for (let x = 0; x < this.size; x++) {
-            const row = cells[x] = [];
-            for (let y = 0; y < this.size; y++) {
+        for (let i = 0; i < this.size; i++) {
+            const row = cells[i] = [];
+            for (let j = 0; j < this.size; j++) {
+
+                // tile.parent = this.node;
                 row.push(null);
             }
         }
@@ -93,25 +122,31 @@ export class Grid extends Component {
         return !!this.availableCells().length;
     }
 
-    public insertTile(tile: Node, pos?: Vec2): void;
+    public insertTile(tile: Tile, pos?: Vec2): void;
     /**
      * 插入一个格子块
      * @param tile 
      */
-    public insertTile(tile: Node, pos?: Vec2): void {
-        const tp: Tile = tile.getComponent(Tile);
-        const x: number = pos ? pos.x : tp.positionX;
-        const y: number = pos ? pos.y : tp.positionY;
+    public insertTile(tile: Tile, pos?: Vec2): void {
+        // const tp: Tile = tile.getComponent(Tile);
+        const x: number = pos ? pos.x : tile.positionX;
+        const y: number = pos ? pos.y : tile.positionY;
         this.cells[x][y] = tile;
     }
 
+    public removeTile(tile: Tile, pos?: Vec2): void;
     /**
      * 移除一个格子块
      * @param tile 
      */
-    public removeTile(tile: Node): void {
-        const tp: Tile = tile.getComponent(Tile);
-        this.cells[tp.positionX][tp.positionY] = null;
+    public removeTile(tile: Tile, pos?: Vec2): void {
+        if (!tile && !pos) {
+            console.warn("移除格子时即没有传入格子对象也没有传位置。两个参数至少传一个");
+            return;
+        }
+        const x: number = pos ? pos.x : tile.positionX;
+        const y: number = pos ? pos.y : tile.positionY;
+        this.cells[x][y] = null;
     }
 
     /**
@@ -119,20 +154,20 @@ export class Grid extends Component {
      * @param vector 
      * @returns 
      */
-    public getCellContent(vector: Vec2): Node {
+    public getCellContent(vector: Vec2): Tile {
         if (this.withinBounds(vector)) {
             return this.cells[vector.x][vector.y];
         }
         return null;
     }
 
-    public getCellTile(vector: Vec2): Tile {
-        const node: Node = this.getCellContent(vector);
-        if (!node) {
-            return null;
-        }
-        return node.getComponent(Tile);
-    }
+    // public getCellTile(vector: Vec2): Tile {
+    //     const node: Node = this.getCellContent(vector);
+    //     if (!node) {
+    //         return null;
+    //     }
+    //     return node.getComponent(Tile);
+    // }
 
     /**
      * 获取格子值
@@ -140,11 +175,11 @@ export class Grid extends Component {
      * @returns 
      */
     public getCellValue(vector: Vec2): number {
-        const node: Node = this.getCellContent(vector);
+        const node: Tile = this.getCellContent(vector);
         if (!node) {
             return 0;
         }
-        return node.getComponent(Tile) ? node.getComponent(Tile).value : 0;
+        return node.value;
     }
 
     /**
@@ -161,9 +196,9 @@ export class Grid extends Component {
         for (var x = 0; x < this.size; x++) {
             var row = cellState[x] = [];
             for (var y = 0; y < this.size; y++) {
-                const node: Node = this.cells[x][y];
-                if (node) {
-                    row.push(node.getComponent(Tile).serialize());
+                const tile: Tile = this.cells[x][y];
+                if (tile) {
+                    row.push(tile.serialize());
                 }
                 else {
                     row.push(null);
@@ -181,13 +216,54 @@ export class Grid extends Component {
         for (var x = 0; x < this.size; x++) {
             const lineValues: number[] = [];
             for (var y = 0; y < this.size; y++) {
-                const node: Node = this.cells[x][y];
-                const value: number = node && node.getComponent(Tile) ? node.getComponent(Tile).value : 0;
+                const value: number = this.getCellValue(math.v2(x, y));
                 lineValues.push(value);
             }
             str += lineValues.join(",") + "\n";
         }
         console.log(str);
+    }
+
+    public render(): void {
+        for (let i = 0; i < this.cells.length; i++) {
+            const cells: Tile[] = this.cells[i];
+            for (let j = 0; j < cells.length; j++) {
+                const node: Node = this.cellNodeArray[i][j];
+                this.setNodeValue(node, this.getCellValue(math.v2(i, j)));
+            }
+        }
+    }
+
+    private async createNode(value: number): Promise<Node> {
+
+        let path: string = "resources://prefabs/Title"
+        const node: Node = await AssetMgr.instance.createPrefab(path)
+
+        if (!node) {
+            return null;
+        }
+        const lableNode = node.getChildByName("Label");
+        if (lableNode) {
+            lableNode.getComponent(Label).string = `${value}`;
+        }
+        const spNode = node.getChildByName("Ghost");
+        if (spNode) {
+            const sp = spNode.getComponent(Sprite);
+            sp.sizeMode = Sprite.SizeMode.CUSTOM;
+            sp.getComponent(UITransform).setContentSize(config2048.tileWidth, config2048.tileHight);
+        }
+        return node;
+    }
+
+    public setNodeValue(node: Node, value: number): void {
+        if (!node) {
+            return;
+        }
+        const lableNode = node.getChildByName("Label");
+        if (lableNode) {
+            lableNode.getComponent(Label).string = value > 0 ? `${value}` : "";
+        }
+
     }
 
     onLoad(): void {

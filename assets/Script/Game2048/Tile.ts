@@ -1,8 +1,7 @@
 import { _decorator, Component, Node, Vec2 } from 'cc';
 const { ccclass, property } = _decorator;
 
-@ccclass('Tile')
-export class Tile extends Component {
+export class Tile {
     public positionX: number;
     public positionY: number;
 
