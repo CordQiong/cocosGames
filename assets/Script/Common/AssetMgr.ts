@@ -1,4 +1,4 @@
-import { Asset, assetManager, AssetManager, instantiate, Prefab, Node, Texture2D, SpriteFrame } from "cc";
+import { Asset, assetManager, AssetManager, instantiate, Node, Prefab } from "cc";
 
 /**
  * @class name : AssetManager
