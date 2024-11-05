@@ -17,9 +17,6 @@ import { ViewShowTypes } from "../Common/Enum";
  * 9. 界面置顶回调
  */
 
-const { ccclass, property } = _decorator;
-
-
 
 export default abstract class BaseView extends Component {
 
