@@ -7,7 +7,7 @@ import { IRPGModelData, RPGConfig, RPGStateType } from './RPGConfig';
 import ViewConst from '../../ui/ViewConst';
 import AssetMgr from '../../Common/AssetMgr';
 import { ModelCtrl } from './ModelCtrl';
-import { RPGLuanch } from './RPGLuanch';
+import { RPGLauncher as RPGLauncher } from './RPGLauncher';
 import { RPGModelAnimName } from './Enum';
 const { ccclass, property } = _decorator;
 
@@ -133,7 +133,7 @@ export class RPGPanel extends BaseView {
             
 
             const campList: IRPGModelData[] = this.getOrderArraryByCamp(targetCamp);
-            const index: number = RPGLuanch.ins.randomInt(0, campList.length - 1);
+            const index: number = RPGLauncher.ins.randomInt(0, campList.length - 1);
             console.log("随机出来的下标", index);
             let targetObj = campList[index];
             // for (let i = 0; i < this.orderArrary.length; i++) {

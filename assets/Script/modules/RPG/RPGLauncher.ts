@@ -1,17 +1,17 @@
 import { _decorator, Component, Node, SpriteFrame } from 'cc';
 const { ccclass, property } = _decorator;
 
-@ccclass('RPGLuanch')
-export class RPGLuanch extends Component {
+@ccclass('RPGLauncher')
+export class RPGLauncher extends Component {
 
-    public static ins: RPGLuanch;
+    public static ins: RPGLauncher;
 
     protected onLoad(): void {
-        if (RPGLuanch.ins) {
+        if (RPGLauncher.ins) {
             this.destroy();
             return;
         } else { 
-            RPGLuanch.ins = this;
+            RPGLauncher.ins = this;
         }
     }
 

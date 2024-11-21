@@ -217,8 +217,8 @@
       "__expectedType__": "dragonBones.DragonBonesAtlasAsset"
     },
     "_armatureName": "Swordsman",
-    "_animationName": "",
-    "_animationIndexValue": 0,
+    "_animationName": "walk",
+    "_animationIndexValue": 4,
     "_defaultCacheModeValue": 0,
     "_timeScale": 1,
     "_playTimes": -1,
