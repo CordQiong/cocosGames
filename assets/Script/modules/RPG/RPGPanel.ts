@@ -8,6 +8,7 @@ import ViewConst from '../../ui/ViewConst';
 import AssetMgr from '../../Common/AssetMgr';
 import { ModelCtrl } from './ModelCtrl';
 import { RPGLuanch } from './RPGLuanch';
+import { RPGModelAnimName } from './Enum';
 const { ccclass, property } = _decorator;
 
 @ccclass('RPGPanel')
@@ -89,6 +90,7 @@ export class RPGPanel extends BaseView {
         if (ctr) {
             ctr.setModeData(data);
         }
+        ctr.playAnimation(RPGModelAnimName.Idel);
         return node;
     }
 
@@ -167,7 +169,7 @@ export class RPGPanel extends BaseView {
                 const targetData = this.getOrderDataByIndex(this.targetIndex);
                 this.attack(obj, targetData).then((value1) => {
                     console.error("执行到攻击返回步骤了")
-                    this.move(obj, obj).then((value) => {
+                    this.move(obj, obj,true).then((value) => {
                         if (value1 <= 0) {
                             this.setModelState(targetData, RPGStateType.Death);
                         } 
@@ -241,13 +243,23 @@ export class RPGPanel extends BaseView {
                 rejecet("模型没有绑定管理脚本");
                 return;
             }
-            console.error(`${attacker.index} 攻击了${target.index},造成了${attacker.attack}伤害,防御了${target.def},还剩${target.hp}`);
-            modelCtr.setHp(targetCurrentHp / 100);
-            resolve(targetCurrentHp);
+            const attackModel: Node = this.getTargetModel(attacker);
+            if (attackModel) {
+                const attackCtr: ModelCtrl = attackModel.getComponent(ModelCtrl);
+                if (attackCtr) {
+                    attackCtr.playAnimation(RPGModelAnimName.Attack).then(value => { 
+                        console.error(`${attacker.index} 攻击了${target.index},造成了${attacker.attack}伤害,防御了${target.def},还剩${target.hp}`);
+                        modelCtr.setHp(targetCurrentHp / 100);
+                        resolve(targetCurrentHp);
+                    }).catch(err => { 
+                        console.error(err);
+                    });
+                }
+            }
         })
     }
 
-    private move(obj: IRPGModelData, target: IRPGModelData): Promise<any>{
+    private move(obj: IRPGModelData, target: IRPGModelData,isBack:boolean = false): Promise<any>{
         return new Promise((resolve, reject) => { 
             if (!obj || !target) {
                 reject("数据为空");
@@ -258,7 +270,21 @@ export class RPGPanel extends BaseView {
                 reject("模型为空")
                 return;
             }
+            const ctr: ModelCtrl = model.getComponent(ModelCtrl);
+            
+            if (ctr) {
+                if (isBack) {
+                    ctr.rotationDiretion();
+                }
+                ctr.playAnimation(RPGModelAnimName.Walk);
+            }
             tween(model).to(1, { position: math.v3(target.pos.x, target.pos.y, 0) }).call((target, data) => {
+                if (ctr) {
+                    if (isBack) {
+                        ctr.rotationDiretion();
+                    }
+                    ctr.playAnimation(RPGModelAnimName.Idel,0);
+                }
                 resolve(true);
             }, this).start();
         })
