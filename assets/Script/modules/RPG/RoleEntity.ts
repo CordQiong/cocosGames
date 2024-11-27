@@ -4,8 +4,8 @@ import { IRPGModelData, RPGConfig } from './RPGConfig';
 import { RPGModelAnimName, RPGModelDirection } from './Enum';
 const { ccclass, property } = _decorator;
 
-@ccclass('ModelCtrl')
-export class ModelCtrl extends Component {
+@ccclass('RoleEntity')
+export class RoleEntity extends Component {
 
     private spNode: Node;
     private progressNode: Node;

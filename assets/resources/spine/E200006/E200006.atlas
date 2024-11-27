@@ -1,0 +1,818 @@
+
+E200006.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+hongyan_24
+  rotate: false
+  xy: 226, 4
+  size: 190, 19
+  orig: 203, 22
+  offset: 10, 2
+  index: -1
+xiaoguifeichu_19
+  rotate: false
+  xy: 1052, 123
+  size: 116, 65
+  orig: 174, 104
+  offset: 24, 20
+  index: -1
+xiaoguifeichu_20
+  rotate: false
+  xy: 1170, 140
+  size: 116, 65
+  orig: 174, 104
+  offset: 24, 20
+  index: -1
+xiaoguifeichu_21
+  rotate: false
+  xy: 1288, 145
+  size: 116, 65
+  orig: 174, 104
+  offset: 24, 20
+  index: -1
+yingying(1)
+  rotate: false
+  xy: 977, 408
+  size: 226, 102
+  orig: 226, 102
+  offset: 0, 0
+  index: -1
+右1小鬼头
+  rotate: false
+  xy: 1610, 444
+  size: 68, 66
+  orig: 69, 67
+  offset: 1, 1
+  index: -1
+右1小鬼头副本
+  rotate: false
+  xy: 1534, 444
+  size: 74, 66
+  orig: 74, 66
+  offset: 0, 0
+  index: -1
+右1小鬼小刀
+  rotate: true
+  xy: 791, 103
+  size: 22, 42
+  orig: 23, 43
+  offset: 0, 1
+  index: -1
+右1小鬼左手
+  rotate: true
+  xy: 819, 180
+  size: 14, 18
+  orig: 14, 18
+  offset: 0, 0
+  index: -1
+右1小鬼舌头
+  rotate: false
+  xy: 1579, 127
+  size: 36, 20
+  orig: 36, 20
+  offset: 0, 0
+  index: -1
+右1小鬼身体
+  rotate: false
+  xy: 1677, 91
+  size: 85, 77
+  orig: 85, 78
+  offset: 0, 1
+  index: -1
+右1小鬼身体副本
+  rotate: false
+  xy: 1714, 398
+  size: 114, 112
+  orig: 114, 112
+  offset: 0, 0
+  index: -1
+右2小鬼右手臂
+  rotate: true
+  xy: 854, 42
+  size: 17, 18
+  orig: 17, 18
+  offset: 0, 0
+  index: -1
+右2小鬼头
+  rotate: false
+  xy: 1525, 2
+  size: 69, 73
+  orig: 69, 73
+  offset: 0, 0
+  index: -1
+右2小鬼头副本
+  rotate: false
+  xy: 1497, 149
+  size: 85, 83
+  orig: 85, 83
+  offset: 0, 0
+  index: -1
+右2小鬼左尖牙
+  rotate: false
+  xy: 484, 25
+  size: 8, 9
+  orig: 8, 9
+  offset: 0, 0
+  index: -1
+右2小鬼左手
+  rotate: false
+  xy: 1649, 127
+  size: 23, 22
+  orig: 23, 23
+  offset: 0, 1
+  index: -1
+右2小鬼左手臂
+  rotate: false
+  xy: 733, 179
+  size: 29, 15
+  orig: 30, 17
+  offset: 0, 0
+  index: -1
+右2小鬼帽子辩
+  rotate: false
+  xy: 835, 103
+  size: 38, 22
+  orig: 40, 22
+  offset: 1, 0
+  index: -1
+右2小鬼武器棒
+  rotate: false
+  xy: 1064, 378
+  size: 86, 28
+  orig: 86, 38
+  offset: 0, 10
+  index: -1
+右2小鬼符咒
+  rotate: true
+  xy: 1460, 119
+  size: 27, 41
+  orig: 27, 41
+  offset: 0, 0
+  index: -1
+右2小鬼舌头
+  rotate: true
+  xy: 1540, 127
+  size: 20, 37
+  orig: 20, 37
+  offset: 0, 0
+  index: -1
+右2小鬼身体
+  rotate: false
+  xy: 1421, 3
+  size: 102, 65
+  orig: 102, 65
+  offset: 0, 0
+  index: -1
+右2小鬼身体副本
+  rotate: false
+  xy: 1318, 275
+  size: 188, 103
+  orig: 449, 402
+  offset: 261, 299
+  index: -1
+右脚
+  rotate: true
+  xy: 1426, 442
+  size: 68, 106
+  orig: 70, 106
+  offset: 2, 0
+  index: -1
+图层 179
+  rotate: true
+  xy: 1149, 103
+  size: 18, 20
+  orig: 18, 20
+  offset: 0, 0
+  index: -1
+图层 212
+  rotate: true
+  xy: 494, 28
+  size: 6, 10
+  orig: 6, 10
+  offset: 0, 0
+  index: -1
+图层 213
+  rotate: false
+  xy: 874, 49
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+图层 251
+  rotate: false
+  xy: 1242, 381
+  size: 66, 36
+  orig: 66, 36
+  offset: 0, 0
+  index: -1
+图层 257
+  rotate: true
+  xy: 1345, 5
+  size: 61, 74
+  orig: 61, 74
+  offset: 0, 0
+  index: -1
+图层 292
+  rotate: false
+  xy: 1307, 109
+  size: 43, 34
+  orig: 43, 34
+  offset: 0, 0
+  index: -1
+图层 293
+  rotate: false
+  xy: 788, 42
+  size: 21, 17
+  orig: 22, 22
+  offset: 0, 1
+  index: -1
+图层 294
+  rotate: false
+  xy: 1122, 103
+  size: 25, 18
+  orig: 26, 19
+  offset: 0, 0
+  index: -1
+地上小纸人
+  rotate: true
+  xy: 418, 3
+  size: 20, 43
+  orig: 97, 91
+  offset: 0, 35
+  index: -1
+大鬼下身中裙摆
+  rotate: true
+  xy: 905, 190
+  size: 177, 156
+  orig: 179, 161
+  offset: 2, 5
+  index: -1
+大鬼下身右裙摆
+  rotate: false
+  xy: 1063, 207
+  size: 129, 164
+  orig: 129, 171
+  offset: 0, 7
+  index: -1
+大鬼下身左裙摆
+  rotate: false
+  xy: 659, 196
+  size: 244, 171
+  orig: 244, 171
+  offset: 0, 0
+  index: -1
+大鬼下身衣服
+  rotate: false
+  xy: 545, 103
+  size: 198, 72
+  orig: 198, 72
+  offset: 0, 0
+  index: -1
+大鬼下身衣服右黄毛须
+  rotate: false
+  xy: 1325, 436
+  size: 99, 74
+  orig: 101, 76
+  offset: 2, 2
+  index: -1
+大鬼下身衣服左黄毛须
+  rotate: false
+  xy: 886, 2
+  size: 114, 57
+  orig: 116, 57
+  offset: 0, 0
+  index: -1
+大鬼前遮布瘟
+  rotate: true
+  xy: 2, 6
+  size: 84, 222
+  orig: 86, 222
+  offset: 2, 0
+  index: -1
+大鬼右发右分叉
+  rotate: true
+  xy: 656, 3
+  size: 37, 116
+  orig: 38, 116
+  offset: 0, 0
+  index: -1
+大鬼右发左分叉
+  rotate: true
+  xy: 511, 3
+  size: 31, 143
+  orig: 31, 147
+  offset: 0, 4
+  index: -1
+大鬼右手掌
+  rotate: true
+  xy: 1404, 70
+  size: 44, 61
+  orig: 45, 63
+  offset: 1, 0
+  index: -1
+大鬼右手臂
+  rotate: false
+  xy: 1318, 217
+  size: 54, 56
+  orig: 54, 56
+  offset: 0, 0
+  index: -1
+大鬼右袖子
+  rotate: false
+  xy: 1148, 2
+  size: 101, 63
+  orig: 101, 63
+  offset: 0, 0
+  index: -1
+大鬼右金眉毛
+  rotate: true
+  xy: 977, 373
+  size: 33, 85
+  orig: 34, 86
+  offset: 0, 1
+  index: -1
+大鬼头
+  rotate: true
+  xy: 462, 36
+  size: 59, 161
+  orig: 60, 164
+  offset: 0, 0
+  index: -1
+大鬼左发右分叉
+  rotate: true
+  xy: 1152, 380
+  size: 26, 88
+  orig: 26, 90
+  offset: 0, 2
+  index: -1
+大鬼左发左分叉
+  rotate: true
+  xy: 1002, 16
+  size: 43, 144
+  orig: 43, 144
+  offset: 0, 0
+  index: -1
+大鬼左小腿
+  rotate: true
+  xy: 1199, 68
+  size: 33, 66
+  orig: 34, 66
+  offset: 1, 0
+  index: -1
+大鬼左手掌
+  rotate: true
+  xy: 1547, 394
+  size: 48, 47
+  orig: 51, 49
+  offset: 2, 2
+  index: -1
+大鬼左手臂
+  rotate: false
+  xy: 774, 5
+  size: 110, 35
+  orig: 110, 36
+  offset: 0, 0
+  index: -1
+大鬼左脚
+  rotate: false
+  xy: 1327, 68
+  size: 75, 39
+  orig: 76, 41
+  offset: 0, 2
+  index: -1
+大鬼左袖子
+  rotate: false
+  xy: 1251, 4
+  size: 92, 62
+  orig: 93, 62
+  offset: 1, 0
+  index: -1
+大鬼左金眉毛
+  rotate: true
+  xy: 1239, 105
+  size: 33, 66
+  orig: 33, 67
+  offset: 0, 1
+  index: -1
+大鬼肚子
+  rotate: false
+  xy: 1596, 7
+  size: 91, 76
+  orig: 91, 77
+  offset: 0, 0
+  index: -1
+大鬼肩膀
+  rotate: false
+  xy: 1508, 281
+  size: 165, 106
+  orig: 166, 108
+  offset: 1, 1
+  index: -1
+大鬼背后鼓
+  rotate: false
+  xy: 1672, 170
+  size: 158, 109
+  orig: 158, 109
+  offset: 0, 0
+  index: -1
+大鬼背带
+  rotate: true
+  xy: 1194, 212
+  size: 166, 122
+  orig: 234, 201
+  offset: 65, 0
+  index: -1
+大鬼腰带右吊带
+  rotate: true
+  xy: 625, 42
+  size: 59, 161
+  orig: 59, 162
+  offset: 0, 1
+  index: -1
+大鬼腰带左吊带
+  rotate: true
+  xy: 914, 103
+  size: 85, 136
+  orig: 86, 136
+  offset: 1, 0
+  index: -1
+大鬼铃铛
+  rotate: true
+  xy: 1171, 103
+  size: 35, 66
+  orig: 37, 66
+  offset: 2, 0
+  index: -1
+大鬼铃铛下面
+  rotate: true
+  xy: 745, 103
+  size: 22, 44
+  orig: 25, 45
+  offset: 2, 1
+  index: -1
+左1小鬼右手臂
+  rotate: true
+  xy: 699, 179
+  size: 15, 32
+  orig: 15, 32
+  offset: 0, 0
+  index: -1
+左1小鬼头
+  rotate: true
+  xy: 1467, 77
+  size: 40, 61
+  orig: 41, 61
+  offset: 0, 0
+  index: -1
+左1小鬼头副本
+  rotate: true
+  xy: 1530, 82
+  size: 40, 59
+  orig: 40, 59
+  offset: 0, 0
+  index: -1
+左1小鬼武器小刀
+  rotate: false
+  xy: 1680, 445
+  size: 32, 25
+  orig: 33, 25
+  offset: 0, 0
+  index: -1
+左1小鬼舌头
+  rotate: false
+  xy: 858, 181
+  size: 17, 13
+  orig: 18, 13
+  offset: 0, 0
+  index: -1
+左1小鬼身体
+  rotate: false
+  xy: 1484, 389
+  size: 61, 51
+  orig: 61, 51
+  offset: 0, 0
+  index: -1
+左1小鬼身体副本
+  rotate: true
+  xy: 1205, 419
+  size: 91, 118
+  orig: 92, 118
+  offset: 0, 0
+  index: -1
+左2小鬼右手
+  rotate: false
+  xy: 877, 181
+  size: 13, 13
+  orig: 14, 14
+  offset: 0, 1
+  index: -1
+左2小鬼右脚
+  rotate: true
+  xy: 832, 43
+  size: 16, 20
+  orig: 18, 21
+  offset: 0, 0
+  index: -1
+左2小鬼头
+  rotate: false
+  xy: 1374, 219
+  size: 53, 54
+  orig: 53, 54
+  offset: 0, 0
+  index: -1
+左2小鬼头副本
+  rotate: false
+  xy: 1429, 221
+  size: 52, 52
+  orig: 52, 52
+  offset: 0, 0
+  index: -1
+左2小鬼左手
+  rotate: false
+  xy: 892, 181
+  size: 11, 13
+  orig: 12, 13
+  offset: 1, 0
+  index: -1
+左2小鬼左脚
+  rotate: true
+  xy: 1596, 257
+  size: 22, 20
+  orig: 22, 20
+  offset: 0, 0
+  index: -1
+左2小鬼舌头
+  rotate: false
+  xy: 795, 179
+  size: 22, 15
+  orig: 23, 16
+  offset: 1, 1
+  index: -1
+左2小鬼身体
+  rotate: true
+  xy: 1584, 151
+  size: 82, 86
+  orig: 82, 86
+  offset: 0, 0
+  index: -1
+左2小鬼身体副本
+  rotate: false
+  xy: 1814, 284
+  size: 94, 112
+  orig: 96, 112
+  offset: 2, 0
+  index: -1
+左2小鬼鞭子
+  rotate: false
+  xy: 1483, 234
+  size: 61, 39
+  orig: 62, 40
+  offset: 0, 1
+  index: -1
+左手握把
+  rotate: true
+  xy: 659, 178
+  size: 16, 38
+  orig: 17, 40
+  offset: 1, 2
+  index: -1
+拐杖鬼面
+  rotate: false
+  xy: 1675, 290
+  size: 137, 105
+  orig: 137, 107
+  offset: 0, 2
+  index: -1
+拐杖鬼面右吊带
+  rotate: true
+  xy: 788, 61
+  size: 40, 168
+  orig: 57, 180
+  offset: 0, 11
+  index: -1
+拐杖鬼面右挂带
+  rotate: true
+  xy: 1355, 382
+  size: 52, 73
+  orig: 53, 74
+  offset: 1, 0
+  index: -1
+拐杖鬼面左吊带
+  rotate: true
+  xy: 226, 25
+  size: 65, 234
+  orig: 67, 235
+  offset: 2, 0
+  index: -1
+拐杖鬼面左挂带
+  rotate: true
+  xy: 1407, 121
+  size: 25, 51
+  orig: 25, 51
+  offset: 0, 0
+  index: -1
+拐杖鬼面胡须右1
+  rotate: true
+  xy: 1503, 124
+  size: 23, 35
+  orig: 38, 38
+  offset: 15, 1
+  index: -1
+拐杖鬼面胡须右2
+  rotate: true
+  xy: 764, 179
+  size: 15, 29
+  orig: 18, 30
+  offset: 1, 1
+  index: -1
+拐杖鬼面胡须左1
+  rotate: true
+  xy: 1091, 103
+  size: 18, 29
+  orig: 21, 30
+  offset: 1, 1
+  index: -1
+拐杖鬼面胡须左2
+  rotate: true
+  xy: 1617, 129
+  size: 20, 30
+  orig: 22, 31
+  offset: 2, 0
+  index: -1
+棺材1
+  rotate: true
+  xy: 2, 92
+  size: 418, 351
+  orig: 419, 351
+  offset: 0, 0
+  index: -1
+棺材中蜡烛火
+  rotate: true
+  xy: 462, 25
+  size: 9, 20
+  orig: 10, 22
+  offset: 1, 1
+  index: -1
+棺材右圆环
+  rotate: false
+  xy: 1596, 397
+  size: 45, 45
+  orig: 45, 46
+  offset: 0, 0
+  index: -1
+棺材右符咒
+  rotate: true
+  xy: 1352, 116
+  size: 27, 53
+  orig: 27, 53
+  offset: 0, 0
+  index: -1
+棺材右蜡烛火
+  rotate: true
+  xy: 811, 42
+  size: 17, 19
+  orig: 17, 19
+  offset: 0, 0
+  index: -1
+棺材右边大花
+  rotate: false
+  xy: 1430, 380
+  size: 52, 60
+  orig: 52, 61
+  offset: 0, 1
+  index: -1
+棺材右边大花右吊带
+  rotate: true
+  xy: 958, 61
+  size: 40, 141
+  orig: 40, 142
+  offset: 0, 1
+  index: -1
+棺材右边大花左吊带
+  rotate: true
+  xy: 745, 127
+  size: 50, 167
+  orig: 53, 168
+  offset: 3, 1
+  index: -1
+棺材左圆环
+  rotate: false
+  xy: 1643, 397
+  size: 44, 45
+  orig: 45, 46
+  offset: 0, 1
+  index: -1
+棺材左蜡烛火
+  rotate: true
+  xy: 839, 180
+  size: 14, 17
+  orig: 14, 18
+  offset: 0, 1
+  index: -1
+棺材左边大花
+  rotate: false
+  xy: 1546, 235
+  size: 48, 44
+  orig: 48, 45
+  offset: 0, 0
+  index: -1
+棺材左边大花右吊带
+  rotate: true
+  xy: 355, 97
+  size: 78, 188
+  orig: 78, 191
+  offset: 0, 2
+  index: -1
+棺材左边大花左吊带
+  rotate: true
+  xy: 1406, 148
+  size: 69, 89
+  orig: 70, 94
+  offset: 1, 5
+  index: -1
+棺材白布
+  rotate: false
+  xy: 355, 177
+  size: 302, 190
+  orig: 302, 190
+  offset: 0, 0
+  index: -1
+符咒1
+  rotate: true
+  xy: 1267, 76
+  size: 27, 58
+  orig: 27, 58
+  offset: 0, 0
+  index: -1
+符咒2
+  rotate: false
+  xy: 1591, 85
+  size: 57, 40
+  orig: 58, 40
+  offset: 1, 0
+  index: -1
+符咒3
+  rotate: false
+  xy: 1310, 380
+  size: 43, 37
+  orig: 43, 37
+  offset: 0, 0
+  index: -1
+符咒4
+  rotate: true
+  xy: 1680, 472
+  size: 38, 32
+  orig: 38, 32
+  offset: 0, 0
+  index: -1
+符咒5
+  rotate: false
+  xy: 1052, 103
+  size: 37, 18
+  orig: 37, 18
+  offset: 0, 0
+  index: -1
+纸钱1
+  rotate: true
+  xy: 1650, 96
+  size: 29, 25
+  orig: 29, 25
+  offset: 0, 0
+  index: -1
+纸钱2
+  rotate: true
+  xy: 463, 6
+  size: 17, 46
+  orig: 17, 46
+  offset: 0, 0
+  index: -1
+纸钱3
+  rotate: true
+  xy: 1596, 236
+  size: 19, 22
+  orig: 19, 22
+  offset: 0, 0
+  index: -1
+腰带白珠
+  rotate: false
+  xy: 1101, 67
+  size: 96, 34
+  orig: 98, 36
+  offset: 1, 0
+  index: -1
+闭眼
+  rotate: false
+  xy: 875, 103
+  size: 37, 22
+  orig: 37, 22
+  offset: 0, 0
+  index: -1
+骷颅拐杖
+  rotate: true
+  xy: 355, 369
+  size: 141, 620
+  orig: 141, 621
+  offset: 0, 1
+  index: -1

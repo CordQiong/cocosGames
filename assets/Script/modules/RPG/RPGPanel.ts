@@ -6,9 +6,9 @@ import { LayerType } from '../../ui/LayerManager';
 import { IRPGModelData, RPGConfig, RPGStateType } from './RPGConfig';
 import ViewConst from '../../ui/ViewConst';
 import AssetMgr from '../../Common/AssetMgr';
-import { ModelCtrl } from './ModelCtrl';
 import { RPGLauncher as RPGLauncher } from './RPGLauncher';
 import { RPGModelAnimName } from './Enum';
+import { RoleEntity } from './RoleEntity';
 const { ccclass, property } = _decorator;
 
 @ccclass('RPGPanel')
@@ -78,7 +78,7 @@ export class RPGPanel extends BaseView {
     }
 
     private async createMode(data:IRPGModelData){
-        const path: string = ViewConst.defaultPrefabPathPrefix + "RPGModel";
+        const path: string = ViewConst.defaultPrefabPathPrefix + "RPGRoleEntity";
         let node = await AssetMgr.instance.createPrefab(path);
         if (!node) {
             return;
@@ -86,7 +86,7 @@ export class RPGPanel extends BaseView {
 
         node.setPosition(data.pos.x, data.pos.y);
         node.parent = this.node;
-        const ctr: ModelCtrl = node.getComponent(ModelCtrl);
+        const ctr: RoleEntity = node.getComponent(RoleEntity);
         if (ctr) {
             ctr.setModeData(data);
         }
@@ -238,14 +238,14 @@ export class RPGPanel extends BaseView {
                 rejecet("目标模型没找到");
                 return;
             }
-            const modelCtr: ModelCtrl = model.getComponent(ModelCtrl);
+            const modelCtr: RoleEntity = model.getComponent(RoleEntity);
             if (!modelCtr) {
                 rejecet("模型没有绑定管理脚本");
                 return;
             }
             const attackModel: Node = this.getTargetModel(attacker);
             if (attackModel) {
-                const attackCtr: ModelCtrl = attackModel.getComponent(ModelCtrl);
+                const attackCtr: RoleEntity = attackModel.getComponent(RoleEntity);
                 if (attackCtr) {
                     attackCtr.playAnimation(RPGModelAnimName.Attack).then(value => { 
                         console.error(`${attacker.index} 攻击了${target.index},造成了${attacker.attack}伤害,防御了${target.def},还剩${target.hp}`);
@@ -270,7 +270,7 @@ export class RPGPanel extends BaseView {
                 reject("模型为空")
                 return;
             }
-            const ctr: ModelCtrl = model.getComponent(ModelCtrl);
+            const ctr: RoleEntity = model.getComponent(RoleEntity);
             
             if (ctr) {
                 if (isBack) {

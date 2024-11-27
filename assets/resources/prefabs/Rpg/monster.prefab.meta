@@ -2,12 +2,12 @@
   "ver": "1.1.50",
   "importer": "prefab",
   "imported": true,
-  "uuid": "bb3a1dae-757f-44c2-bc0e-7442106a7e63",
+  "uuid": "db3af91e-0b0a-406a-9dda-63b63254245a",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "RPGModel"
+    "syncNodeName": "monster"
   }
 }

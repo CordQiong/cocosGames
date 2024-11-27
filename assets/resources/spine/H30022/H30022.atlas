@@ -1,0 +1,321 @@
+
+H30022.png
+size: 1841,396
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+yingying(1)
+  rotate: false
+  xy: 1673, 230
+  size: 113, 51
+  orig: 113, 51
+  offset: 0, 0
+  index: -1
+上半身
+  rotate: false
+  xy: 1285, 184
+  size: 183, 210
+  orig: 183, 210
+  offset: 0, 0
+  index: -1
+右中指
+  rotate: false
+  xy: 1788, 242
+  size: 23, 39
+  orig: 23, 40
+  offset: 0, 1
+  index: -1
+右小腿
+  rotate: true
+  xy: 1470, 155
+  size: 99, 200
+  orig: 101, 200
+  offset: 0, 0
+  index: -1
+右尾指
+  rotate: true
+  xy: 581, 2
+  size: 13, 36
+  orig: 14, 36
+  offset: 0, 0
+  index: -1
+右手
+  rotate: true
+  xy: 340, 10
+  size: 82, 136
+  orig: 82, 136
+  offset: 0, 0
+  index: -1
+右手掌
+  rotate: true
+  xy: 862, 7
+  size: 43, 59
+  orig: 46, 60
+  offset: 0, 1
+  index: -1
+右手握拳
+  rotate: false
+  xy: 1770, 172
+  size: 69, 56
+  orig: 69, 56
+  offset: 0, 0
+  index: -1
+右手臂
+  rotate: false
+  xy: 965, 29
+  size: 113, 93
+  orig: 113, 93
+  offset: 0, 0
+  index: -1
+右无名指
+  rotate: true
+  xy: 1461, 140
+  size: 13, 40
+  orig: 14, 40
+  offset: 0, 0
+  index: -1
+右眼
+  rotate: true
+  xy: 1770, 151
+  size: 19, 6
+  orig: 19, 6
+  offset: 0, 0
+  index: -1
+右脚
+  rotate: true
+  xy: 638, 2
+  size: 51, 123
+  orig: 51, 139
+  offset: 0, 0
+  index: -1
+右腿
+  rotate: false
+  xy: 1516, 25
+  size: 128, 128
+  orig: 130, 128
+  offset: 0, 0
+  index: -1
+右衣摆
+  rotate: false
+  xy: 1470, 256
+  size: 201, 138
+  orig: 201, 139
+  offset: 0, 1
+  index: -1
+右袖子
+  rotate: false
+  xy: 1285, 2
+  size: 119, 136
+  orig: 119, 136
+  offset: 0, 0
+  index: -1
+右食指
+  rotate: true
+  xy: 1778, 60
+  size: 14, 46
+  orig: 14, 46
+  offset: 0, 0
+  index: -1
+吊发
+  rotate: true
+  xy: 1285, 140
+  size: 42, 174
+  orig: 44, 174
+  offset: 2, 0
+  index: -1
+后头发
+  rotate: true
+  xy: 1744, 58
+  size: 84, 32
+  orig: 84, 32
+  offset: 0, 0
+  index: -1
+头
+  rotate: false
+  xy: 1194, 11
+  size: 87, 111
+  orig: 109, 170
+  offset: 0, 59
+  index: -1
+左中指
+  rotate: false
+  xy: 923, 28
+  size: 40, 22
+  orig: 40, 22
+  offset: 0, 0
+  index: -1
+左小腿
+  rotate: true
+  xy: 1406, 4
+  size: 134, 108
+  orig: 134, 108
+  offset: 0, 0
+  index: -1
+左手
+  rotate: true
+  xy: 713, 55
+  size: 67, 129
+  orig: 67, 129
+  offset: 0, 0
+  index: -1
+左手掌
+  rotate: true
+  xy: 763, 6
+  size: 47, 60
+  orig: 108, 133
+  offset: 53, 1
+  index: -1
+左手臂
+  rotate: false
+  xy: 1672, 144
+  size: 96, 84
+  orig: 104, 84
+  offset: 0, 0
+  index: -1
+左拇指
+  rotate: true
+  xy: 1516, 3
+  size: 20, 52
+  orig: 20, 52
+  offset: 0, 0
+  index: -1
+左眼
+  rotate: true
+  xy: 2, 2
+  size: 10, 6
+  orig: 10, 6
+  offset: 0, 0
+  index: -1
+左脚
+  rotate: false
+  xy: 1646, 67
+  size: 96, 75
+  orig: 97, 75
+  offset: 0, 0
+  index: -1
+左腿
+  rotate: false
+  xy: 2, 14
+  size: 185, 78
+  orig: 185, 78
+  offset: 0, 0
+  index: -1
+左衣摆
+  rotate: false
+  xy: 189, 8
+  size: 149, 84
+  orig: 149, 84
+  offset: 0, 0
+  index: -1
+左袖子
+  rotate: true
+  xy: 844, 52
+  size: 70, 119
+  orig: 70, 119
+  offset: 0, 0
+  index: -1
+左飘发
+  rotate: true
+  xy: 581, 17
+  size: 27, 46
+  orig: 27, 46
+  offset: 0, 0
+  index: -1
+左食指
+  rotate: false
+  xy: 1822, 347
+  size: 15, 47
+  orig: 15, 47
+  offset: 0, 0
+  index: -1
+打开左手
+  rotate: true
+  xy: 1778, 76
+  size: 94, 52
+  orig: 94, 52
+  offset: 0, 0
+  index: -1
+拐杖
+  rotate: true
+  xy: 2, 94
+  size: 300, 709
+  orig: 300, 709
+  offset: 0, 0
+  index: -1
+烟杆
+  rotate: false
+  xy: 1673, 283
+  size: 147, 111
+  orig: 147, 111
+  offset: 0, 0
+  index: -1
+烟灰
+  rotate: false
+  xy: 923, 14
+  size: 15, 12
+  orig: 15, 12
+  offset: 0, 0
+  index: -1
+烟灰发光
+  rotate: true
+  xy: 1570, 2
+  size: 21, 18
+  orig: 21, 18
+  offset: 0, 0
+  index: -1
+红布1
+  rotate: true
+  xy: 1080, 29
+  size: 93, 112
+  orig: 93, 112
+  offset: 0, 0
+  index: -1
+红布2
+  rotate: true
+  xy: 1723, 7
+  size: 49, 86
+  orig: 49, 86
+  offset: 0, 0
+  index: -1
+红带1
+  rotate: true
+  xy: 638, 60
+  size: 32, 49
+  orig: 32, 49
+  offset: 0, 0
+  index: -1
+红带2
+  rotate: false
+  xy: 825, 2
+  size: 35, 48
+  orig: 35, 48
+  offset: 0, 0
+  index: -1
+胡子
+  rotate: true
+  xy: 1646, 2
+  size: 63, 75
+  orig: 64, 76
+  offset: 0, 1
+  index: -1
+葫芦
+  rotate: false
+  xy: 713, 124
+  size: 570, 270
+  orig: 570, 270
+  offset: 0, 0
+  index: -1
+葫芦红布1
+  rotate: true
+  xy: 478, 46
+  size: 46, 158
+  orig: 46, 158
+  offset: 0, 0
+  index: -1
+葫芦红布2
+  rotate: true
+  xy: 478, 2
+  size: 42, 101
+  orig: 42, 101
+  offset: 0, 0
+  index: -1
