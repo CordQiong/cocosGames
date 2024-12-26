@@ -1,45 +1,39 @@
-import { _decorator, Camera, Canvas, Component, EventTouch, JsonAsset, math, Node, resources, Size, Texture2D, UITransform, Vec3, view } from 'cc';
+import {_decorator, EventTouch, Node, Vec3} from 'cc';
 import MapData from './map/MapData';
-import { MapItemType, MapLoadModel } from './Enum';
-import MapRoadUtils from './map/MapRoadUtils';
-import PathFindingAgent from './map/PathFindingAgent';
+import {MapItemType, MapLoadModel} from './Enum';
 import Player from './character/Player';
-import EntityLayer from './layer/EntityLayer';
-import MapLayer from './layer/MapLayer';
-import { EditMonsterData, EditNpcData, EditSpawnPointData, EditTransferData } from './EditObjData';
+import {EditMonsterData, EditNpcData, EditSpawnPointData, EditTransferData} from './EditObjData';
 import SpawnPoint from './transfer/SpawnPoint';
-import { GameManager } from './GameManager';
+import {GameManager} from './GameManager';
 import TransferDoor from './transfer/TransferDoor';
-import { Monster } from './character/Monster';
-import { Npc } from './character/Npc';
-import MapParams from './info/MapParams';
+import {Monster} from './character/Monster';
+import {Npc} from './character/Npc';
+import {SceneBase} from "db://assets/Script/modules/SceneBase";
+
 const { ccclass, property } = _decorator;
 
 @ccclass('ScenceMap')
-export class ScenceMap extends Component {
-
-    @property(Canvas)
-    public canvas: Canvas;
-    @property(Node)
-    public layer: Node = null;
-
-    @property(MapLayer)
-    public mapLayer: MapLayer = null;
-
-    @property(EntityLayer)
-    public entityLayer: EntityLayer = null;
-
-    @property(Camera)
-    private camera: Camera = null;
+export class ScenceMap extends SceneBase {
+    // @property(Node)
+    // public layer: Node = null;
+    //
+    // @property(MapLayer)
+    // public mapLayer: MapLayer = null;
+    //
+    // @property(EntityLayer)
+    // public entityLayer: EntityLayer = null;
+    //
+    // @property(Camera)
+    // private camera: Camera = null;
 
 
-    private _mapData: MapData;
-    private _mapId: number;
-
-    private targetPos: Vec3 = new Vec3(0, 0, 0);
-
-    private winSize: Size = new Size();
-    private _mapParams: MapParams = null;
+    // private _mapData: MapData;
+    // private _mapId: number;
+    //
+    // private targetPos: Vec3 = new Vec3(0, 0, 0);
+    //
+    // private winSize: Size = new Size();
+    // private _mapParams: MapParams = null;
 
     /**
     * 场景里所有的出生点
@@ -61,88 +55,80 @@ export class ScenceMap extends Component {
      */
     public monsterList: Monster[] = [];
 
-    private player: Player = null;;
+    private player: Player = null;
 
-    private isInit: boolean = false;
+    // private isInit: boolean = false;
 
 
     start() {
-        this.winSize = view.getVisibleSize();
-        this.node.setPosition(math.v3(-this.winSize.width / 2, -this.winSize.height / 2));
+        super.start();
+        // this.winSize = view.getVisibleSize();
+        // this.node.setPosition(math.v3(-this.winSize.width / 2, -this.winSize.height / 2));
         this.node.on(Node.EventType.TOUCH_START, this.onMapTouch, this);
         // this.node.on(Node.EventType.TOUCH_START, (event: EventTouch) => {
         //     const screenPoint = event.getLocation();
         //     console.log('全局点击的屏幕坐标:', screenPoint);
         // }, this);
 
-        this.mapId = 1;
+        this.setMapId(1,MapLoadModel.single);
     }
 
-    public set mapId(value: number) {
-        this._mapId = value;
-        this.loadMap(value);
+    // public set mapId(value: number) {
+    //     this._mapId = value;
+    //     this.loadMap(value);
+    // }
+    //
+    // public get mapId(): number{
+    //     return this._mapId;
+    // }
+
+    // public loadMap(mapId: number, mapLoadModel: MapLoadModel = MapLoadModel.single) {
+    //     if (mapLoadModel == MapLoadModel.single) {
+    //         this.loadSingleMap(mapId);
+    //     } else {
+    //         // this.loadSlicesMap(mapId);
+    //     }
+    // }
+
+    // protected loadSingleMap(mapId: number) {
+    //     var dataPath: string = `Map/map${mapId}/map${mapId}`;
+    //     resources.load(dataPath, JsonAsset, (error: Error, res: JsonAsset) => {
+    //         if (error != null) {
+    //             console.log("加载地图数据失败 path = ", dataPath, "error", error);
+    //             return;
+    //         }
+    //
+    //         var mapData: MapData = res.json as MapData;
+    //
+    //         var bgPath: string = dataPath + "/texture";
+    //         resources.load(bgPath, Texture2D, (error: Error, tex: Texture2D) => {
+    //             if (error != null) {
+    //                 console.log("加载地图背景失败 path = ", bgPath, "error", error);
+    //                 return;
+    //             }
+    //             console.log(mapData, tex);
+    //             this.init(mapData, tex);
+    //             // this.sceneMap.init(mapData, tex, MapLoadModel.single)
+    //         });
+    //
+    //     });
+    // }
+
+    protected getMapPath(mapId: number): string {
+        return `Map/map${mapId}/map${mapId}`
     }
 
-    public get mapId(): number{
-        return this._mapId;
-    }
-
-    public loadMap(mapId: number, mapLoadModel: MapLoadModel = MapLoadModel.single) {
-        if (mapLoadModel == MapLoadModel.single) {
-            this.loadSingleMap(mapId);
-        } else {
-            // this.loadSlicesMap(mapId);
-        }
-    }
-
-    protected loadSingleMap(mapId: number) {
-        var dataPath: string = `Map/map${mapId}/map${mapId}`;
-        resources.load(dataPath, JsonAsset, (error: Error, res: JsonAsset) => {
-            if (error != null) {
-                console.log("加载地图数据失败 path = ", dataPath, "error", error);
-                return;
-            }
-
-            var mapData: MapData = res.json as MapData;
-
-            var bgPath: string = dataPath + "/texture";
-            resources.load(bgPath, Texture2D, (error: Error, tex: Texture2D) => {
-                if (error != null) {
-                    console.log("加载地图背景失败 path = ", bgPath, "error", error);
-                    return;
-                }
-                console.log(mapData, tex);
-                this.init(mapData, tex);
-                // this.sceneMap.init(mapData, tex, MapLoadModel.single)
-            });
-
-        });
-    }
-
-    public init(mapData: MapData, bgTexture: Texture2D): void { 
-        this._mapData = mapData;
-
-        this._mapParams = this.getMapParams(mapData, bgTexture,MapLoadModel.single);
-        this.mapLayer.init(this._mapParams);
-
-        PathFindingAgent.instance.init(mapData);
-        var uiTransform = this.node.getComponent(UITransform);
-        if (uiTransform) {
-            uiTransform.width = this.mapLayer.width;
-            uiTransform.height = this.mapLayer.height;
-        }
-        
+    protected initMapData(mapData: MapData) {
         this.initMapElement();
         this.afterInitMapElement();
         this.initPlayer();
 
         this.setViewToPlayer();
-
-        this.isInit = true;
     }
 
+
     private initMapElement(): void{
-        const mapItems: any[] = this._mapData.mapItems;
+        const mapItems: any[] = this.mapData.mapItems;
         if (!mapItems) {
             return;
         }
@@ -229,7 +215,7 @@ export class ScenceMap extends Component {
             }
         }
 
-        console.error(`地图${this._mapData.name}不存在这个出生点 spawnId = ${spawnId}`);
+        console.error(`地图${this.mapData.name}不存在这个出生点 spawnId = ${spawnId}`);
 
         return null;
     }
@@ -248,25 +234,25 @@ export class ScenceMap extends Component {
      * @param mapLoadModel 
      * @returns 
      */
-    public getMapParams(mapData: MapData, bgTex: Texture2D, mapLoadModel: MapLoadModel = 1): MapParams {
-        //初始化底图参数
-        var mapParams: MapParams = new MapParams();
-        mapParams.name = mapData.name;
-        mapParams.bgName = mapData.bgName;
-        mapParams.mapType = mapData.type;
-        mapParams.mapWidth = mapData.mapWidth;
-        mapParams.mapHeight = mapData.mapHeight;
-        mapParams.ceilWidth = mapData.nodeWidth;
-        mapParams.ceilHeight = mapData.nodeHeight;
-        mapParams.viewWidth = mapData.mapWidth > this.winSize.width ? this.winSize.width : mapData.mapWidth;
-        mapParams.viewHeight = mapData.mapHeight > this.winSize.height ? this.winSize.height : mapData.mapHeight;
-        mapParams.sliceWidth = 256;
-        mapParams.sliceHeight = 256;
-        mapParams.bgTex = bgTex;
-        mapParams.mapLoadModel = mapLoadModel;
-
-        return mapParams;
-    }
+    // public getMapParams(mapData: MapData, bgTex: Texture2D, mapLoadModel: MapLoadModel = 1): MapParams {
+    //     //初始化底图参数
+    //     var mapParams: MapParams = new MapParams();
+    //     mapParams.name = mapData.name;
+    //     mapParams.bgName = mapData.bgName;
+    //     mapParams.mapType = mapData.type;
+    //     mapParams.mapWidth = mapData.mapWidth;
+    //     mapParams.mapHeight = mapData.mapHeight;
+    //     mapParams.ceilWidth = mapData.nodeWidth;
+    //     mapParams.ceilHeight = mapData.nodeHeight;
+    //     mapParams.viewWidth = mapData.mapWidth > this.winSize.width ? this.winSize.width : mapData.mapWidth;
+    //     mapParams.viewHeight = mapData.mapHeight > this.winSize.height ? this.winSize.height : mapData.mapHeight;
+    //     mapParams.sliceWidth = 256;
+    //     mapParams.sliceHeight = 256;
+    //     mapParams.bgTex = bgTex;
+    //     mapParams.mapLoadModel = mapLoadModel;
+    //
+    //     return mapParams;
+    // }
 
     /**
      *把视野定位到给定位置 
@@ -274,68 +260,68 @@ export class ScenceMap extends Component {
     * @param py
     * 
     */
-    public setViewToPoint(px: number, py: number): void {
-        this.targetPos = new Vec3(px, py).subtract(new Vec3(this.winSize.width / 2, this.winSize.height / 2));
-
-        if (this.targetPos.x > this._mapParams.mapWidth - this.winSize.width) {
-            this.targetPos.x = this._mapParams.mapWidth - this.winSize.width;
-        } else if (this.targetPos.x < 0) {
-            this.targetPos.x = 0;
-
-        }
-
-        if (this.targetPos.y > this._mapParams.mapHeight - this.winSize.height) {
-            this.targetPos.y = this._mapParams.mapHeight - this.winSize.height;
-        } else if (this.targetPos.y < 0) {
-            this.targetPos.y = 0;
-        }
-
-        this.targetPos.z = this.camera.node.position.z;
-        this.camera.node.position = this.targetPos;
-
-        // if (this._mapParams.mapLoadModel == MapLoadModel.slices) {
-        //     this.mapLayer.loadSliceImage(this.targetPos.x, this.targetPos.y);
-        // }
-    }
+    // public setViewToPoint(px: number, py: number): void {
+    //     this.targetPos = new Vec3(px, py).subtract(new Vec3(this.winSize.width / 2, this.winSize.height / 2));
+    //
+    //     if (this.targetPos.x > this._mapParams.mapWidth - this.winSize.width) {
+    //         this.targetPos.x = this._mapParams.mapWidth - this.winSize.width;
+    //     } else if (this.targetPos.x < 0) {
+    //         this.targetPos.x = 0;
+    //
+    //     }
+    //
+    //     if (this.targetPos.y > this._mapParams.mapHeight - this.winSize.height) {
+    //         this.targetPos.y = this._mapParams.mapHeight - this.winSize.height;
+    //     } else if (this.targetPos.y < 0) {
+    //         this.targetPos.y = 0;
+    //     }
+    //
+    //     this.targetPos.z = this.camera.node.position.z;
+    //     this.camera.node.position = this.targetPos;
+    //
+    //     // if (this._mapParams.mapLoadModel == MapLoadModel.slices) {
+    //     //     this.mapLayer.loadSliceImage(this.targetPos.x, this.targetPos.y);
+    //     // }
+    // }
 
 
     /**
      * 视图跟随玩家
      * @param dt 
      */
-    public followPlayer(dt: number) {
-        if (this.player == null) {
-            return;
-        }
-
-        this.targetPos = this.player.node.position.clone().subtract(new Vec3(this.winSize.width / 2, this.winSize.height / 2));
-
-        if (this.targetPos.x > this._mapParams.mapWidth - this.winSize.width) {
-            this.targetPos.x = this._mapParams.mapWidth - this.winSize.width;
-        } else if (this.targetPos.x < 0) {
-            this.targetPos.x = 0;
-
-        }
-
-        if (this.targetPos.y > this._mapParams.mapHeight - this.winSize.height) {
-            this.targetPos.y = this._mapParams.mapHeight - this.winSize.height;
-        } else if (this.targetPos.y < 0) {
-            this.targetPos.y = 0;
-        }
-
-
-        this.targetPos.z = this.camera.node.position.z;
-
-        //摄像机平滑跟随
-        this.targetPos = this.camera.node.position.clone().lerp(this.targetPos, dt * 2.0);
-        // this.camera.node.position = this.targetPos;
-        this.camera.node.setPosition(this.targetPos);
-
-        // if (this._mapParams.mapLoadModel == MapLoadModel.slices) {
-        //     this.mapLayer.loadSliceImage(this.targetPos.x, this.targetPos.y);
-        // }
-
-    }
+    // public followPlayer(dt: number) {
+    //     if (this.player == null) {
+    //         return;
+    //     }
+    //
+    //     this.targetPos = this.player.node.position.clone().subtract(new Vec3(this.winSize.width / 2, this.winSize.height / 2));
+    //
+    //     if (this.targetPos.x > this._mapParams.mapWidth - this.winSize.width) {
+    //         this.targetPos.x = this._mapParams.mapWidth - this.winSize.width;
+    //     } else if (this.targetPos.x < 0) {
+    //         this.targetPos.x = 0;
+    //
+    //     }
+    //
+    //     if (this.targetPos.y > this._mapParams.mapHeight - this.winSize.height) {
+    //         this.targetPos.y = this._mapParams.mapHeight - this.winSize.height;
+    //     } else if (this.targetPos.y < 0) {
+    //         this.targetPos.y = 0;
+    //     }
+    //
+    //
+    //     this.targetPos.z = this.camera.node.position.z;
+    //
+    //     //摄像机平滑跟随
+    //     this.targetPos = this.camera.node.position.clone().lerp(this.targetPos, dt * 2.0);
+    //     // this.camera.node.position = this.targetPos;
+    //     this.camera.node.setPosition(this.targetPos);
+    //
+    //     // if (this._mapParams.mapLoadModel == MapLoadModel.slices) {
+    //     //     this.mapLayer.loadSliceImage(this.targetPos.x, this.targetPos.y);
+    //     // }
+    //
+    // }
 
     /**
      * 将视野对准玩家
@@ -358,8 +344,10 @@ export class ScenceMap extends Component {
         if (!this.isInit) {
             return;
         }
-
-        this.followPlayer(deltaTime);
+        if(this.player){
+            this.followTarget(this.player.node,deltaTime);
+        }
+        // this.followPlayer(deltaTime);
 
     }
 }

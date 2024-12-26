@@ -10,7 +10,7 @@ export default class MapLayer extends Component {
     @property(Sprite)
     private bgImg: Sprite = null;
 
-    private _mapParams: MapParams = null;
+    protected _mapParams: MapParams = null;
 
     protected update(dt: number): void {
        

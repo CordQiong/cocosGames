@@ -1,5 +1,6 @@
-import { Component, Enum, _decorator } from "cc";
+import {Component, Enum, _decorator, Node} from "cc";
 import { ViewShowTypes } from "../Common/Enum";
+import {Behaviour} from "db://assets/Script/modules/RPG/Behaviour";
 /**
  * UIView界面基础类
  * 
@@ -18,7 +19,7 @@ import { ViewShowTypes } from "../Common/Enum";
  */
 
 
-export default abstract class BaseView extends Component {
+export default abstract class BaseView extends Behaviour {
 
     public quickClose: boolean = false;
     /** 屏蔽点击选项 在UIConf设置屏蔽点击*/

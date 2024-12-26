@@ -1,0 +1,98 @@
+{
+  "theme": {
+    "1": {
+      "map1": {
+        "towers": [
+          1,
+          2
+        ],
+        "startValue": 200,
+        "enemyCount": 40
+      },
+      "map2": {
+        "towers": [
+          2,
+          3
+        ],
+        "startValue": 300,
+        "enemyCount": 45
+      }
+    },
+    "2": {
+      "map1": {
+        "towers": [
+          1,
+          2
+        ]
+      },
+      "map2": {
+        "towers": [
+          2,
+          3
+        ]
+      }
+    }
+  },
+  "towers": {
+    "1": {
+      "level1": {
+        "buildCost": 100,
+        "removeBack": 80,
+        "harm": 10,
+        "speed": 250
+      },
+      "level2": {
+        "buildCost": 150,
+        "removeBack": 90,
+        "harm": 20,
+        "speed": 260
+      },
+      "level3": {
+        "buildCost": 200,
+        "removeBack": 100,
+        "harm": 30,
+        "speed": 270
+      }
+    },
+    "2": {
+      "level1": {
+        "buildCost": 200,
+        "removeBack": 100,
+        "harm": 10,
+        "speed": 300
+      },
+      "level2": {
+        "buildCost": 250,
+        "removeBack": 150,
+        "harm": 10,
+        "speed": 310
+      },
+      "level3": {
+        "buildCost": 300,
+        "removeBack": 200,
+        "harm": 10,
+        "speed": 320
+      }
+    },
+    "3": {
+      "level1": {
+        "buildCost": 20,
+        "removeBack": 10,
+        "harm": 10,
+        "speed": 200
+      },
+      "level2": {
+        "buildCost": 30,
+        "removeBack": 20,
+        "harm": 10,
+        "speed": 210
+      },
+      "level3": {
+        "buildCost": 40,
+        "removeBack": 30,
+        "harm": 10,
+        "speed": 220
+      }
+    }
+  }
+}

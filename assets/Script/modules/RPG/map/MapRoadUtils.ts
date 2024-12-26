@@ -1,7 +1,8 @@
-import { math, Vec2 } from "cc";
-import { MapType } from "../Enum";
+import {math, Vec2} from "cc";
+import {MapType} from "../Enum";
 import RoadNode from "./RoadNode";
 import MapRoad45Angle from "./mapRoad/MapRoad45Angle";
+import MapRoad90Angle from "db://assets/Script/modules/RPG/map/mapRoad/MapRoad90Angle";
 
 export default class MapRoadUtils {
     private static _instance: MapRoadUtils;
@@ -52,6 +53,11 @@ export default class MapRoadUtils {
                 this._col = Math.ceil(mapWidth / nodeWidth);
                 this._row = Math.ceil(mapHeight / nodeHeight) * 2;
                 this._mapRoad = new MapRoad45Angle(this._row, this._col, this._nodeWidth, this._nodeHeight, this._halfNodeWidth, this._halfNodeHeight);
+                break;
+            case MapType.Angle90:
+                this._col = Math.ceil(mapWidth / nodeWidth);
+                this._row = Math.ceil(mapHeight / nodeHeight);
+                this._mapRoad = new MapRoad90Angle(this._row, this._col, this._nodeWidth, this._nodeHeight, this._halfNodeWidth, this._halfNodeHeight);
                 break;
         
             default:

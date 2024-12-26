@@ -1,0 +1,237 @@
+
+seffect_600002.png
+size: 1551,1071
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/c1c4e2f253
+  rotate: true
+  xy: 702, 171
+  size: 108, 107
+  orig: 128, 128
+  offset: 10, 9
+  index: -1
+images/dajian_0005
+  rotate: true
+  xy: 173, 74
+  size: 62, 110
+  orig: 360, 640
+  offset: 145, 530
+  index: -1
+images/dajian_0006
+  rotate: false
+  xy: 231, 156
+  size: 144, 244
+  orig: 360, 640
+  offset: 105, 273
+  index: -1
+images/dajian_0007
+  rotate: true
+  xy: 285, 2
+  size: 152, 238
+  orig: 360, 640
+  offset: 105, 273
+  index: -1
+images/dajian_0008
+  rotate: false
+  xy: 377, 170
+  size: 165, 234
+  orig: 360, 640
+  offset: 99, 273
+  index: -1
+images/dajian_0009
+  rotate: true
+  xy: 525, 4
+  size: 164, 231
+  orig: 360, 640
+  offset: 99, 273
+  index: -1
+images/dajian_0010
+  rotate: false
+  xy: 544, 222
+  size: 156, 231
+  orig: 360, 640
+  offset: 99, 273
+  index: -1
+images/dajian_0011
+  rotate: false
+  xy: 702, 281
+  size: 155, 231
+  orig: 360, 640
+  offset: 99, 273
+  index: -1
+images/dajian_0012
+  rotate: false
+  xy: 1400, 605
+  size: 148, 231
+  orig: 360, 640
+  offset: 105, 273
+  index: -1
+images/dajian_0013
+  rotate: false
+  xy: 1012, 288
+  size: 149, 231
+  orig: 360, 640
+  offset: 105, 273
+  index: -1
+images/dajian_0014
+  rotate: false
+  xy: 859, 288
+  size: 151, 231
+  orig: 360, 640
+  offset: 105, 273
+  index: -1
+images/dajian_0015
+  rotate: false
+  xy: 1163, 293
+  size: 149, 231
+  orig: 360, 640
+  offset: 105, 273
+  index: -1
+images/dajian_0016
+  rotate: false
+  xy: 1400, 838
+  size: 149, 231
+  orig: 360, 640
+  offset: 105, 273
+  index: -1
+images/dajian_0017
+  rotate: false
+  xy: 1400, 372
+  size: 148, 231
+  orig: 360, 640
+  offset: 105, 273
+  index: -1
+images/dajian_0018
+  rotate: true
+  xy: 758, 16
+  size: 153, 230
+  orig: 360, 640
+  offset: 105, 273
+  index: -1
+images/dajian_0019
+  rotate: true
+  xy: 990, 40
+  size: 150, 229
+  orig: 360, 640
+  offset: 105, 273
+  index: -1
+images/dajian_0020
+  rotate: false
+  xy: 811, 183
+  size: 150, 96
+  orig: 360, 640
+  offset: 105, 273
+  index: -1
+images/dajian_0021
+  rotate: false
+  xy: 963, 192
+  size: 148, 94
+  orig: 360, 640
+  offset: 105, 273
+  index: -1
+images/dajian_0022
+  rotate: false
+  xy: 1113, 192
+  size: 143, 94
+  orig: 360, 640
+  offset: 105, 273
+  index: -1
+images/gray_yel
+  rotate: false
+  xy: 1397, 242
+  size: 137, 128
+  orig: 137, 138
+  offset: 0, 10
+  index: -1
+images/guangzhu_0000
+  rotate: false
+  xy: 1252, 530
+  size: 146, 539
+  orig: 720, 1280
+  offset: 289, 613
+  index: -1
+images/guangzhu_0001
+  rotate: false
+  xy: 1036, 526
+  size: 214, 543
+  orig: 720, 1280
+  offset: 253, 613
+  index: -1
+images/guangzhu_0002
+  rotate: false
+  xy: 467, 455
+  size: 211, 614
+  orig: 720, 1280
+  offset: 256, 613
+  index: -1
+images/guangzhu_0003
+  rotate: false
+  xy: 826, 521
+  size: 208, 548
+  orig: 720, 1280
+  offset: 256, 613
+  index: -1
+images/guangzhu_0004
+  rotate: false
+  xy: 297, 406
+  size: 168, 663
+  orig: 720, 1280
+  offset: 273, 613
+  index: -1
+images/guangzhu_0005
+  rotate: false
+  xy: 2, 402
+  size: 146, 667
+  orig: 720, 1280
+  offset: 289, 613
+  index: -1
+images/guangzhu_0006
+  rotate: false
+  xy: 150, 402
+  size: 145, 667
+  orig: 720, 1280
+  offset: 290, 613
+  index: -1
+images/guangzhu_0007
+  rotate: false
+  xy: 680, 514
+  size: 144, 555
+  orig: 720, 1280
+  offset: 291, 613
+  index: -1
+images/guangzhu_0008
+  rotate: false
+  xy: 1314, 4
+  size: 81, 524
+  orig: 720, 1280
+  offset: 332, 644
+  index: -1
+images/guangzhu_0009
+  rotate: false
+  xy: 2, 63
+  size: 83, 337
+  orig: 720, 1280
+  offset: 333, 646
+  index: -1
+images/guangzhu_0010
+  rotate: false
+  xy: 87, 65
+  size: 84, 335
+  orig: 720, 1280
+  offset: 332, 647
+  index: -1
+images/guangzhu_0011
+  rotate: true
+  xy: 2, 5
+  size: 56, 267
+  orig: 720, 1280
+  offset: 332, 650
+  index: -1
+images/guangzhu_0012
+  rotate: false
+  xy: 173, 138
+  size: 56, 262
+  orig: 720, 1280
+  offset: 332, 656
+  index: -1

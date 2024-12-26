@@ -12,7 +12,8 @@ export enum RPGModelDirection {
 }
 
 export enum MapType{
-    Angle45 = 0
+    Angle45 = 0,
+    Angle90 = 1,
 }
 
 export enum MapLoadModel{

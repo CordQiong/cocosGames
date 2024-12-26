@@ -1,0 +1,55 @@
+
+seffect_600007.png
+size: 1664,342
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/hit/hit_00000
+  rotate: false
+  xy: 1317, 15
+  size: 188, 178
+  orig: 500, 500
+  offset: 92, 214
+  index: -1
+images/hit/hit_00001
+  rotate: false
+  xy: 1507, 88
+  size: 99, 105
+  orig: 500, 500
+  offset: 174, 222
+  index: -1
+images/hit/hit_00002
+  rotate: false
+  xy: 388, 3
+  size: 345, 337
+  orig: 500, 500
+  offset: 56, 100
+  index: -1
+images/hit/hit_00003
+  rotate: false
+  xy: 2, 16
+  size: 384, 324
+  orig: 500, 500
+  offset: 25, 103
+  index: -1
+images/hit/hit_00004
+  rotate: false
+  xy: 735, 2
+  size: 341, 338
+  orig: 500, 500
+  offset: 75, 99
+  index: -1
+images/hit/hit_00005
+  rotate: false
+  xy: 1078, 9
+  size: 237, 331
+  orig: 500, 500
+  offset: 170, 91
+  index: -1
+images/hit/hit_00006
+  rotate: true
+  xy: 1317, 195
+  size: 145, 345
+  orig: 500, 500
+  offset: 267, 84
+  index: -1

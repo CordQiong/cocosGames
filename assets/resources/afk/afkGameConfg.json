@@ -1,0 +1,64 @@
+{
+    "heros": {
+        "1": {
+            "spineId": 135091,
+            "maxHp": 200,
+            "maxMp": 100,
+            "comp": 0
+        },
+        "2": {
+            "spineId": 144061,
+            "maxHp": 200,
+            "maxMp": 100,
+            "comp": 0
+        },
+        "3": {
+            "spineId": 145101,
+            "maxHp": 200,
+            "maxMp": 100,
+            "comp": 0
+        },
+        "4": {
+            "spineId": 215121,
+            "maxHp": 200,
+            "maxMp": 100,
+            "comp": 0
+        },
+        "5": {
+            "spineId": 221011,
+            "maxHp": 200,
+            "maxMp": 100,
+            "comp": 0
+        },
+        "6": {
+            "spineId": 131011,
+            "maxHp": 200,
+            "maxMp": 100,
+            "comp": 1
+        },
+        "7": {
+            "spineId": 133031,
+            "maxHp": 200,
+            "maxMp": 100,
+            "comp": 1
+        },
+        "8": {
+            "spineId": 134051,
+            "maxHp": 200,
+            "maxMp": 100,
+            "comp": 1
+        },
+        "9": {
+            "spineId": 525101,
+            "maxHp": 200,
+            "maxMp": 100,
+            "comp": 1
+        },
+        "10": {
+            "spineId": 535051,
+            "maxHp": 200,
+            "maxMp": 100,
+            "comp": 1
+        }
+    }
+}

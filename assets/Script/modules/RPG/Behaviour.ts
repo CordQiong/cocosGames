@@ -1,6 +1,7 @@
-import { _decorator, Component, Node, ITriggerEvent, Collider, UITransform, Vec3, UIOpacity, CCString, Collider2D, Contact2DType, IPhysics2DContact } from "cc";
+import { _decorator, Component, Node, ITriggerEvent, Collider, UITransform, Vec3, UIOpacity, CCString, Collider2D, Contact2DType, IPhysics2DContact, ICollisionEvent } from "cc";
 import { Transform } from "./Transform";
 import { GameObject } from "./GameObject";
+import { QuadTreeRect } from "../../Common/QuadTree";
 
 const { ccclass, property } = _decorator;
 
@@ -10,6 +11,10 @@ const { ccclass, property } = _decorator;
 @ccclass("Behaviour")
 export class Behaviour extends Component {
     
+    public get rect(): QuadTreeRect { 
+        const postioion = this.node.position.clone();
+        return new QuadTreeRect(postioion.x, postioion.y, this.width, this.height);
+    }
     /**
      * 对象标识
      */
@@ -215,43 +220,130 @@ export class Behaviour extends Component {
     }
 
     /**
+     * 2D 触发器进入函数
+     * @param selfCollider 自己的碰撞体
+     * @param otherCollider 对方的碰撞体
+     * @param contact
+     * @protected
+     */
+    protected onTriggerEnter2D(selfCollider: Collider2D, otherCollider: Collider2D, contact: IPhysics2DContact | null):void{
+
+    }
+
+    /**
+     * 2D 触发器结束函数
+     * @param selfCollider
+     * @param otherCollider
+     * @param contact
+     * @protected
+     */
+    protected onTriggerExit2D(selfCollider: Collider2D, otherCollider: Collider2D, contact: IPhysics2DContact | null):void{
+
+    }
+
+    /**
+     * 2D 碰撞器进入函数
+     * @param selfCollider
+     * @param otherCollider
+     * @param contact
+     * @protected
+     */
+    protected onCollisionEnter2D(selfCollider: Collider2D, otherCollider: Collider2D, contact: IPhysics2DContact | null):void{
+
+    }
+
+    /**
+     * 2D 碰撞器退出函数
+     * @param selfCollider
+     * @param otherCollider
+     * @param contact
+     * @protected
+     */
+    protected onCollisionExit2D(selfCollider: Collider2D, otherCollider: Collider2D, contact: IPhysics2DContact | null):void{
+
+    }
+
+    /**
      * 监听2d碰撞事件
      */
     protected add2DColliderEventListener()
     {
+        let i;
         this.colliders_2D = this.getComponents(Collider2D);
 
-        if(this["onTriggerEnter2D"])
+        for(i = 0; i < this.colliders_2D.length ; i++)
         {
-            for(var i = 0 ; i < this.colliders_2D.length ; i++)
-            {
-                this.colliders_2D[i].on(Contact2DType.BEGIN_CONTACT,this["onTriggerEnter2D"],this);
-            }
+            this.colliders_2D[i].on(Contact2DType.BEGIN_CONTACT,this.onTriggerEnter2D,this);
         }
 
-        if(this["onTriggerExit2D"])
+        for(i = 0; i < this.colliders_2D.length ; i++)
         {
-            for(var i = 0 ; i < this.colliders_2D.length ; i++)
-            {
-                this.colliders_2D[i].on(Contact2DType.END_CONTACT,this["onTriggerExit2D"],this);
-            }
+            this.colliders_2D[i].on(Contact2DType.END_CONTACT,this.onTriggerExit2D,this);
         }
 
-        if(this["onCollisionEnter2D"])
+        for(i = 0; i < this.colliders_2D.length ; i++)
         {
-            for(var i = 0 ; i < this.colliders_2D.length ; i++)
-            {
-                this.colliders_2D[i].on(Contact2DType.BEGIN_CONTACT,this["onCollisionEnter2D"],this);
-            }
+            this.colliders_2D[i].on(Contact2DType.BEGIN_CONTACT,this.onCollisionEnter2D,this);
         }
 
-        if(this["onCollisionExit2D"])
+        for(i = 0; i < this.colliders_2D.length ; i++)
         {
-            for(var i = 0 ; i < this.colliders_2D.length ; i++)
-            {
-                this.colliders_2D[i].on(Contact2DType.END_CONTACT,this["onCollisionExit2D"],this);
-            }
+            this.colliders_2D[i].on(Contact2DType.END_CONTACT,this.onCollisionExit2D,this);
         }
+
+    }
+
+    /**
+     * 3D 触发器进入函数
+     * @param event
+     * @protected
+     */
+    protected onTriggerEnter(event:ITriggerEvent):void{
+
+    }
+
+    /**
+     * 3D 触发器持续函数
+     * @param event
+     * @private
+     */
+    private onTriggerStay(event:ITriggerEvent):void{
+
+    }
+
+    /**
+     * 3D 触发器退出函数
+     * @param event
+     * @private
+     */
+    private onTriggerExit(event:ITriggerEvent):void{
+
+    }
+
+    /**
+     * 3D 碰撞器进入函数
+     * @param event
+     * @private
+     */
+    private onCollisionEnter(event: ICollisionEvent):void{
+
+    }
+
+    /**
+     * 3D 碰撞器持续函数
+     * @param event
+     * @private
+     */
+    private onCollisionStay(event:ICollisionEvent):void{
+
+    }
+
+    /**
+     * 3D 碰撞器退出函数
+     * @param event
+     * @private
+     */
+    private onCollisionExit(event:ICollisionEvent):void{
 
     }
 
@@ -262,52 +354,34 @@ export class Behaviour extends Component {
     {
         this.colliders_3D = this.getComponents(Collider);
 
-        if(this["onTriggerEnter"])
+        for(let i = 0 ; i < this.colliders_3D.length ; i++)
         {
-            for(var i = 0 ; i < this.colliders_3D.length ; i++)
-            {
-                this.colliders_3D[i].on("onTriggerEnter",this["onTriggerEnter"],this);
-            }
+            this.colliders_3D[i].on("onTriggerEnter", this.onTriggerEnter,this);
         }
 
-        if(this["onTriggerStay"])
+        for(let i = 0 ; i < this.colliders_3D.length ; i++)
         {
-            for(var i = 0 ; i < this.colliders_3D.length ; i++)
-            {
-                this.colliders_3D[i].on("onTriggerStay",this["onTriggerStay"],this);
-            }
+            this.colliders_3D[i].on("onTriggerStay",this.onTriggerStay,this);
         }
 
-        if(this["onTriggerExit"])
+        for(let i = 0 ; i < this.colliders_3D.length ; i++)
         {
-            for(var i = 0 ; i < this.colliders_3D.length ; i++)
-            {
-                this.colliders_3D[i].on("onTriggerExit",this["onTriggerExit"],this);
-            }
+            this.colliders_3D[i].on("onTriggerExit",this.onTriggerExit,this);
         }
 
-        if(this["onCollisionEnter"])
+        for(let i = 0 ; i < this.colliders_3D.length ; i++)
         {
-            for(var i = 0 ; i < this.colliders_3D.length ; i++)
-            {
-                this.colliders_3D[i].on("onCollisionEnter",this["onCollisionEnter"],this);
-            }
+            this.colliders_3D[i].on("onCollisionEnter",this.onCollisionEnter,this);
         }
 
-        if(this["onCollisionStay"])
+        for(let i = 0 ; i < this.colliders_3D.length ; i++)
         {
-            for(var i = 0 ; i < this.colliders_3D.length ; i++)
-            {
-                this.colliders_3D[i].on("onCollisionStay",this["onCollisionStay"],this);
-            }
+            this.colliders_3D[i].on("onCollisionStay",this.onCollisionStay,this);
         }
 
-        if(this["onCollisionExit"])
+        for(var i = 0 ; i < this.colliders_3D.length ; i++)
         {
-            for(var i = 0 ; i < this.colliders_3D.length ; i++)
-            {
-                this.colliders_3D[i].on("onCollisionExit",this["onCollisionExit"],this);
-            }
+            this.colliders_3D[i].on("onCollisionExit",this.onCollisionExit,this);
         }
     }
 
@@ -319,63 +393,25 @@ export class Behaviour extends Component {
     {
         if(this.colliders_2D)
         {
-            for(var i = 0 ; i < this.colliders_2D.length ; i++)
+            for(let i = 0 ; i < this.colliders_2D.length ; i++)
             {
-                if(this["onTriggerEnter2D"])
-                {
-                    this.colliders_2D[i].off(Contact2DType.BEGIN_CONTACT,this["onTriggerEnter2D"],this);
-                }
-                
-                if(this["onTriggerExit2D"])
-                {
-                    this.colliders_2D[i].off(Contact2DType.END_CONTACT,this["onTriggerExit2D"],this);
-                }
-
-                if(this["onCollisionEnter2D"])
-                {
-                    this.colliders_2D[i].off(Contact2DType.BEGIN_CONTACT,this["onCollisionEnter2D"],this);
-                }
-
-                if(this["onCollisionExit2D"])
-                {
-                    this.colliders_2D[i].off(Contact2DType.END_CONTACT,this["onCollisionExit2D"],this);
-                } 
+                this.colliders_2D[i].off(Contact2DType.BEGIN_CONTACT,this.onTriggerEnter2D,this);
+                this.colliders_2D[i].off(Contact2DType.END_CONTACT,this.onTriggerExit2D,this);
+                this.colliders_2D[i].off(Contact2DType.BEGIN_CONTACT,this.onCollisionEnter2D,this);
+                this.colliders_2D[i].off(Contact2DType.END_CONTACT,this.onCollisionExit2D,this);
             }
         }
 
         if(this.colliders_3D)
         {
-            for(var i = 0 ; i < this.colliders_3D.length ; i++)
+            for(let i = 0 ; i < this.colliders_3D.length ; i++)
             {
-                if(this["onTriggerEnter"])
-                {
-                    this.colliders_3D[i].off("onTriggerEnter",this["onTriggerEnter"],this);
-                }
-                
-                if(this["onTriggerStay"])
-                {
-                    this.colliders_3D[i].off("onTriggerStay",this["onTriggerStay"],this);
-                }
-
-                if(this["onTriggerExit"])
-                {
-                    this.colliders_3D[i].off("onTriggerExit",this["onTriggerExit"],this);
-                }
-
-                if(this["onCollisionEnter"])
-                {
-                    this.colliders_3D[i].off("onCollisionEnter",this["onCollisionEnter"],this);
-                }
-
-                if(this["onCollisionStay"])
-                {
-                    this.colliders_3D[i].off("onCollisionStay",this["onCollisionStay"],this);
-                }
-
-                if(this["onCollisionExit"])
-                {
-                    this.colliders_3D[i].off("onCollisionExit",this["onCollisionExit"],this);
-                } 
+                this.colliders_3D[i].off("onTriggerEnter",this.onTriggerEnter,this);
+                this.colliders_3D[i].off("onTriggerStay",this.onTriggerStay,this);
+                this.colliders_3D[i].off("onTriggerExit",this.onTriggerExit,this);
+                this.colliders_3D[i].off("onCollisionEnter",this.onCollisionEnter,this);
+                this.colliders_3D[i].off("onCollisionStay",this.onCollisionStay,this);
+                this.colliders_3D[i].off("onCollisionExit",this.onCollisionExit,this);
             }
         }
     }
@@ -384,20 +420,6 @@ export class Behaviour extends Component {
     {
         this.removeAllColliderEventListener();
     }
-
-    /* //3D碰撞函数模板
-    protected onTriggerEnter(event:ITriggerEvent):void
-    {
-    }
-    */
-
-    /* //3D碰撞函数模板
-    public onTriggerEnter2D(self: Collider2D, other: Collider2D, contact: IPhysics2DContact | null)
-    {
-
-    }*/
-
-
 }
 
 //Behaviour.prototype.onLoad = function(){this.onLoad(); console.log("执行了behaviour的 onload")};

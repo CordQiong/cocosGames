@@ -1,0 +1,118 @@
+
+seffect_600003.png
+size: 1005,320
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/hit/0_00000
+  rotate: false
+  xy: 767, 2
+  size: 113, 92
+  orig: 300, 300
+  offset: 90, 78
+  index: -1
+images/hit/0_00001
+  rotate: false
+  xy: 813, 199
+  size: 143, 119
+  orig: 300, 300
+  offset: 71, 68
+  index: -1
+images/hit/0_00002
+  rotate: true
+  xy: 502, 16
+  size: 143, 141
+  orig: 300, 300
+  offset: 75, 68
+  index: -1
+images/hit/0_00004
+  rotate: true
+  xy: 344, 3
+  size: 149, 156
+  orig: 300, 300
+  offset: 73, 68
+  index: -1
+images/hit/0_00006
+  rotate: true
+  xy: 490, 161
+  size: 157, 152
+  orig: 300, 300
+  offset: 70, 68
+  index: -1
+images/hit/0_00008
+  rotate: true
+  xy: 330, 154
+  size: 164, 158
+  orig: 300, 300
+  offset: 67, 68
+  index: -1
+images/hit/0_00010
+  rotate: true
+  xy: 2, 150
+  size: 168, 164
+  orig: 300, 300
+  offset: 65, 65
+  index: -1
+images/hit/0_00012
+  rotate: true
+  xy: 168, 150
+  size: 168, 160
+  orig: 300, 300
+  offset: 65, 66
+  index: -1
+images/hit/0_00014
+  rotate: false
+  xy: 2, 7
+  size: 169, 141
+  orig: 300, 300
+  offset: 65, 75
+  index: -1
+images/hit/0_00016
+  rotate: false
+  xy: 173, 26
+  size: 169, 122
+  orig: 300, 300
+  offset: 65, 84
+  index: -1
+images/hit/0_00018
+  rotate: false
+  xy: 644, 206
+  size: 167, 112
+  orig: 300, 300
+  offset: 66, 89
+  index: -1
+images/hit/0_00020
+  rotate: false
+  xy: 645, 96
+  size: 141, 108
+  orig: 300, 300
+  offset: 78, 93
+  index: -1
+images/hit/0_00022
+  rotate: false
+  xy: 788, 101
+  size: 137, 96
+  orig: 300, 300
+  offset: 79, 97
+  index: -1
+images/hit/0_00024
+  rotate: false
+  xy: 645, 2
+  size: 120, 92
+  orig: 300, 300
+  offset: 80, 103
+  index: -1
+images/hit/0_00026
+  rotate: false
+  xy: 882, 22
+  size: 118, 77
+  orig: 300, 300
+  offset: 82, 120
+  index: -1
+images/hit/0_00028
+  rotate: false
+  xy: 927, 121
+  size: 76, 76
+  orig: 300, 300
+  offset: 93, 123
+  index: -1

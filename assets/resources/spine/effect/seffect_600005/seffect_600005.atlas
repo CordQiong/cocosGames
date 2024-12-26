@@ -1,0 +1,118 @@
+
+seffect_600005.png
+size: 900,369
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+shizi_00
+  rotate: false
+  xy: 840, 5
+  size: 58, 134
+  orig: 125, 300
+  offset: 36, 31
+  index: -1
+shizi_01
+  rotate: false
+  xy: 527, 131
+  size: 59, 236
+  orig: 125, 300
+  offset: 35, 26
+  index: -1
+shizi_02
+  rotate: false
+  xy: 460, 125
+  size: 65, 242
+  orig: 125, 300
+  offset: 32, 20
+  index: -1
+shizi_03
+  rotate: false
+  xy: 383, 124
+  size: 75, 243
+  orig: 125, 300
+  offset: 27, 19
+  index: -1
+shizi_04
+  rotate: false
+  xy: 256, 121
+  size: 125, 246
+  orig: 125, 300
+  offset: 0, 19
+  index: -1
+shizi_05
+  rotate: false
+  xy: 129, 118
+  size: 125, 249
+  orig: 125, 300
+  offset: 0, 19
+  index: -1
+shizi_06
+  rotate: false
+  xy: 2, 115
+  size: 125, 252
+  orig: 125, 300
+  offset: 0, 20
+  index: -1
+shizi_07
+  rotate: false
+  xy: 588, 134
+  size: 125, 233
+  orig: 125, 300
+  offset: 0, 30
+  index: -1
+shizi_08
+  rotate: false
+  xy: 588, 134
+  size: 125, 233
+  orig: 125, 300
+  offset: 0, 30
+  index: -1
+shizi_09
+  rotate: false
+  xy: 588, 134
+  size: 125, 233
+  orig: 125, 300
+  offset: 0, 30
+  index: -1
+shizi_10
+  rotate: false
+  xy: 588, 134
+  size: 125, 233
+  orig: 125, 300
+  offset: 0, 30
+  index: -1
+shizi_11
+  rotate: true
+  xy: 609, 7
+  size: 125, 229
+  orig: 125, 300
+  offset: 0, 30
+  index: -1
+shizi_12
+  rotate: false
+  xy: 715, 141
+  size: 124, 226
+  orig: 125, 300
+  offset: 1, 31
+  index: -1
+shizi_13
+  rotate: true
+  xy: 386, 2
+  size: 120, 221
+  orig: 125, 300
+  offset: 5, 31
+  index: -1
+shizi_14
+  rotate: true
+  xy: 2, 3
+  size: 110, 213
+  orig: 125, 300
+  offset: 10, 31
+  index: -1
+shizi_15
+  rotate: true
+  xy: 217, 24
+  size: 92, 167
+  orig: 125, 300
+  offset: 19, 66
+  index: -1

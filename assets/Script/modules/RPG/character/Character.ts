@@ -1,5 +1,5 @@
 
-import { Node, Component, _decorator, Label, Vec3, sp, math, view} from "cc";
+import { Node, Component, _decorator, Label, Vec3, sp, math, view, Vec2} from "cc";
 import { Behaviour } from "../Behaviour";
 import RoadNode from "../map/RoadNode";
 import PathFindingAgent from "../map/PathFindingAgent";
@@ -70,7 +70,7 @@ export default class Character extends Behaviour {
     {
         if (!this._skeleton)
         {
-            this._skeleton = this.node.getComponent(sp.Skeleton);
+            this._skeleton = this.node.getComponentInChildren(sp.Skeleton);
         }
         return this._skeleton;
     }
@@ -96,22 +96,33 @@ export default class Character extends Behaviour {
     public set direction(value:number)
     {
         this._direction = value;
-
-        if(value > 4)
-        {
-            // this.skeleton.rowIndex = 4 - value % 4;
-            let scale = this.skeleton.node.scale.clone();
-            let scaleX: number = scale.x;
-            scale.x = scaleX;
-            this.skeleton.node.scale = scale;
-        }else
-        {
-            // this.movieClip.rowIndex = value;
+        if (value == 2) {
             let scale: Vec3 = this.skeleton.node.scale.clone();
             let scaleX: number = scale.x;
             scale.x = -scaleX;
             this.skeleton.node.scale = scale;
+            return;
         }
+        let scale = this.skeleton.node.scale.clone();
+        let scaleX: number = scale.x;
+        scale.x = scaleX;
+        this.skeleton.node.scale = scale;
+
+        // if(value > 4)
+        // {
+        //     // this.skeleton.rowIndex = 4 - value % 4;
+        //     let scale = this.skeleton.node.scale.clone();
+        //     let scaleX: number = scale.x;
+        //     scale.x = scaleX;
+        //     this.skeleton.node.scale = scale;
+        // }else
+        // {
+        //     // this.movieClip.rowIndex = value;
+        //     let scale: Vec3 = this.skeleton.node.scale.clone();
+        //     let scaleX: number = scale.x;
+        //     scale.x = -scaleX;
+        //     this.skeleton.node.scale = scale;
+        // }
     }
 
     protected _state:CharacterState = 0;
@@ -167,7 +178,8 @@ export default class Character extends Behaviour {
 
     private _moveAngle:number = 0;
 
-    private _roadNodeArr:RoadNode[] = [];
+    private _roadNodeArr: RoadNode[] = [];
+    private _roadNodeVec2: Vec2[] = [];
     private _nodeIndex: number = 0;
 
     // LIFE-CYCLE CALLBACKS:
@@ -185,6 +197,7 @@ export default class Character extends Behaviour {
     private screenHeight: number = 0; // 屏幕高度
 
     onLoad(): void {
+        super.onLoad();
         const visibleSize = view.getVisibleSize();
         this.screenWidth = visibleSize.width;
         this.screenHeight = visibleSize.height;
@@ -201,7 +214,7 @@ export default class Character extends Behaviour {
         if(this.moving)
         {
 
-            var nextNode:RoadNode = this._roadNodeArr[this._nodeIndex];
+            var nextVec: Vec2 = this._roadNodeVec2[this._nodeIndex];
 
             let pos = this.node.position;
 
@@ -209,8 +222,8 @@ export default class Character extends Behaviour {
             let posY: number = pos.y;
 
 
-            var dx: number = nextNode.px - posX;
-            var dy: number = nextNode.py - posY;
+            var dx: number = nextVec.x - posX;
+            var dy: number = nextVec.y - posY;
 
             var speed:number = this.moveSpeed * dt;
 
@@ -236,8 +249,8 @@ export default class Character extends Behaviour {
 
                 if(this._nodeIndex == this._roadNodeArr.length - 1)
                 {
-                    posX = nextNode.px;
-                    posY = nextNode.py
+                    posX = nextVec.x;
+                    posY = nextVec.y
 
                     this.stop();
                 }else
@@ -310,6 +323,14 @@ export default class Character extends Behaviour {
     public walkByRoad(roadNodeArr:RoadNode[])
     {
         this._roadNodeArr = roadNodeArr;
+        const nodeVec2Array:Vec2[] = this._roadNodeArr.map(e => { 
+            return math.v2(e.px, e.py);
+        },this)
+        this.wolkByVec2(nodeVec2Array);
+    }
+
+    public wolkByVec2(vec2Array: Vec2[]): void{
+        this._roadNodeVec2 = vec2Array;
         this._nodeIndex = 0;
         this._moveAngle = 0;
 
@@ -319,7 +340,7 @@ export default class Character extends Behaviour {
 
     private walk()
     {
-        if(this._nodeIndex < this._roadNodeArr.length - 1)
+        if (this._nodeIndex < this._roadNodeVec2.length - 1)
         {
             this._nodeIndex ++;
         }else

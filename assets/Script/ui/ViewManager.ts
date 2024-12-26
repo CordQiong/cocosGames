@@ -334,7 +334,9 @@ export class ViewManager {
             if (view) {
                 view.init(params);
             }
-            this.ViewCache[viewVo.id] = view;
+            if(view.cache){
+                this.ViewCache[viewVo.id] = view;
+            }
             resolve(view);
         })
 
@@ -623,3 +625,4 @@ export class ViewManager {
 }
 
 export let viewManager: ViewManager = new ViewManager();
+window["viewManager"] = viewManager;
