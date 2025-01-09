@@ -1,5 +1,6 @@
 import { HashMap } from "../../../Common/maps/HashMap";
 import { HeroConfigVo } from "./HeroConfigVo";
+import { SkillConfigVo } from "./SkillConfigVo";
 
 /**
  * @fileName AFKGameConfigVo.ts
@@ -9,4 +10,5 @@ import { HeroConfigVo } from "./HeroConfigVo";
  */
 export class AFKGameConfigVo {
     public heros: { [key: string]: HeroConfigVo }
+    public skills: { [key: string]: SkillConfigVo }
 }

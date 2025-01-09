@@ -8,4 +8,5 @@ export enum PanelType {
     TowerGameScene = 4,
     GameOverOrWin = 5,
     AFKGame = 6,
+    AFKResultPanel = 7,
 }

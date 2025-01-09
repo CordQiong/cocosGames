@@ -101,11 +101,16 @@ export default class AssetMgr {
      */
     private parseAssetPath(path: string) {
         let bundleName: string, assetName: string;
-        let regex = /(.*):\/\/(.*)/;
-        let regexArr = path.match(regex);
-        if (regexArr == null || regexArr.length <= 0) return null;
-        bundleName = regexArr[1];
-        assetName = regexArr[2];
+        if (path.indexOf(":") != -1) {
+            let regex = /(.*):\/\/(.*)/;
+            let regexArr = path.match(regex);
+            if (regexArr == null || regexArr.length <= 0) return null;
+            bundleName = regexArr[1];
+            assetName = regexArr[2];
+        } else {
+            bundleName = "resources"
+            assetName = path;
+        }
         return { bundleName, assetName };
     }
 

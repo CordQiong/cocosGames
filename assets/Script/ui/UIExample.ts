@@ -11,7 +11,7 @@ const { ccclass, property } = _decorator;
 export class UIExample extends Component {
     start() {
         LayerManager.init(this.node);
-        viewManager.open(AFKGame, "测试测试");
+        viewManager.open(MainPanel, "测试测试");
     }
 
     update(deltaTime: number) {

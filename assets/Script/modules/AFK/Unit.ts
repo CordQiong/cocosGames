@@ -20,6 +20,9 @@ export class Unit extends Containers {
     isDestroy: boolean = false;
 
     mLocation: Vec2;
+
+    private _scaleX: number;
+    private _scaleY: number;
     protected onLoad(): void {
         this.mLocation = new Vec2();
     }
@@ -95,6 +98,13 @@ export class Unit extends Containers {
     getLocation(): Vec3 {
         return this.position.clone();
     }
+
+    public setLocationScale(x: number, y: number): void {
+        this._scaleX = x;
+        this._scaleY = y;
+        this.setScale(x, y);
+    }
+
     getDisplay(): Node {
         return this;
     }
@@ -105,10 +115,14 @@ export class Unit extends Containers {
     onRemove(): void {
 
     }
-    protected getBounds(): number[] {
+    public getBounds(): number[] {
         const uiTransform: UITransform = this.getComponent(UITransform);
-        const width: number = uiTransform ? uiTransform.width : 0;
-        const height: number = uiTransform ? uiTransform.height : 0;
+        let width: number = uiTransform ? uiTransform.width : 0;
+        let height: number = uiTransform ? uiTransform.height : 0;
+        let scale: Vec3 = new Vec3();
+        this.getScale(scale);
+        width = Math.abs(width * scale.x);
+        height = Math.abs(height * scale.y);
         return [0, width, 0, height];
     }
 

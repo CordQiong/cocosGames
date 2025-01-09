@@ -3,6 +3,7 @@ import { HashMap } from "../../Common/maps/HashMap";
 import { Containers } from "./Containers";
 import { Unit } from "./Unit";
 import { IDepthHelper } from "./depthHelper/DepthHelper";
+import { GameConst } from "./GameConst";
 
 /**
  * @fileName Scene.ts
@@ -31,12 +32,31 @@ export class Scene extends Containers {
         this.unitNameMap = new HashMap<string, Unit>();
         this.entityTypeMap = new HashMap<number, Unit[]>();
         this.queue = [];
+        this.depthHelper = [];
     }
 
     init(): void {
         this.removeDepth();
 
-        this.layers = ["bg", "role"]
+        this.layers = [
+            GameConst.BG_LAYER,
+            GameConst.MAP_Bottom_Role_LAYER,
+            GameConst.MAP_LAYER,
+            GameConst.DECORATE_LAYER,
+            GameConst.MAP_SHADOW_LAYER,
+            GameConst.MAP_MAGIC_LAYER,
+            GameConst.MAP_EFFECT_LAYER,
+            GameConst.MAP_DROP_LAYER,
+            GameConst.EFFECT_Bottom_LAYER,
+            GameConst.EFFECT_TOP_LAYER,
+            GameConst.ROLE_LAYER,
+            GameConst.ROLE_NAME_LAYER,
+            GameConst.EFFECT_LAYER,
+            GameConst.HIT_EFFECT_LAYER,
+            GameConst.CENTER_LAYER,
+            GameConst.TOP_LAYER,
+            GameConst.HURT_EFFECT_LAYER,
+        ]
         this.setContainers(this.layers);
         for (let i = 0; i < this.layers.length; i++) {
             const layerName: string = this.layers[i];

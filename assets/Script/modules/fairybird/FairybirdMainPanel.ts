@@ -11,7 +11,7 @@ export class FairybirdMainPanel extends BaseView {
     public onOpen(fromUI: number | string, ...args: any): void {
         console.log("成功打开了", fromUI, args)
         const count: number = 10;
-        for (let i: number = 0; i < count; i++){
+        for (let i: number = 0; i < count; i++) {
             console.log(`random value:${this.seedRandom()}`);
         }
     }
@@ -20,12 +20,12 @@ export class FairybirdMainPanel extends BaseView {
     private initSeed: number = 5;
     private logRandomArray: number[] = [];
 
-    public setRandomSeed(seed: number): void{
+    public setRandomSeed(seed: number): void {
         this.initSeed = seed;
         console.error("收到随机数", this.initSeed);
     }
 
-    public seedRandom(): number{
+    public seedRandom(): number {
         if (this.logRandomArray.length < 30) {
             this.logRandomArray.push(this.seed);
         }

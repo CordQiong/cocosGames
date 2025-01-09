@@ -1,64 +1,416 @@
 {
     "heros": {
         "1": {
-            "spineId": 135091,
+            "spineId": 315101,
             "maxHp": 200,
             "maxMp": 100,
-            "comp": 0
+            "comp": 0,
+            "layer": "role",
+            "site": 1,
+            "speed": 5,
+            "skillIds": [
+                110001,
+                120001
+            ]
         },
         "2": {
-            "spineId": 144061,
+            "spineId": 325151,
             "maxHp": 200,
             "maxMp": 100,
-            "comp": 0
+            "comp": 0,
+            "layer": "role",
+            "site": 2,
+            "speed": 5,
+            "skillIds": [
+                110002,
+                120002
+            ]
         },
         "3": {
             "spineId": 145101,
             "maxHp": 200,
             "maxMp": 100,
-            "comp": 0
+            "comp": 0,
+            "layer": "role",
+            "site": 3,
+            "speed": 5,
+            "skillIds": [
+                110003,
+                120003
+            ]
         },
         "4": {
             "spineId": 215121,
             "maxHp": 200,
             "maxMp": 100,
-            "comp": 0
+            "comp": 0,
+            "layer": "role",
+            "site": 4,
+            "speed": 5,
+            "skillIds": [
+                110004,
+                120004
+            ]
         },
         "5": {
             "spineId": 221011,
             "maxHp": 200,
             "maxMp": 100,
-            "comp": 0
+            "comp": 0,
+            "layer": "role",
+            "site": 5,
+            "speed": 5,
+            "skillIds": [
+                110005,
+                120005
+            ]
         },
         "6": {
             "spineId": 131011,
             "maxHp": 200,
             "maxMp": 100,
-            "comp": 1
+            "comp": 1,
+            "layer": "role",
+            "site": 1,
+            "speed": 5,
+            "skillIds": [
+                110006,
+                120006
+            ]
         },
         "7": {
             "spineId": 133031,
             "maxHp": 200,
             "maxMp": 100,
-            "comp": 1
+            "comp": 1,
+            "layer": "role",
+            "site": 2,
+            "speed": 5,
+            "skillIds": [
+                110007,
+                120007
+            ]
         },
         "8": {
-            "spineId": 134051,
+            "spineId": 315131,
             "maxHp": 200,
             "maxMp": 100,
-            "comp": 1
+            "comp": 1,
+            "layer": "role",
+            "site": 3,
+            "speed": 5,
+            "skillIds": [
+                110008,
+                120008
+            ]
         },
         "9": {
             "spineId": 525101,
             "maxHp": 200,
             "maxMp": 100,
-            "comp": 1
+            "comp": 1,
+            "layer": "role",
+            "site": 4,
+            "speed": 5,
+            "skillIds": [
+                110009,
+                120009
+            ]
         },
         "10": {
             "spineId": 535051,
             "maxHp": 200,
             "maxMp": 100,
-            "comp": 1
+            "comp": 1,
+            "layer": "role",
+            "site": 5,
+            "speed": 5,
+            "skillIds": [
+                110010,
+                120010
+            ]
+        }
+    },
+    "skills": {
+        "110001": {
+            "skillId": 110001,
+            "firstCd": 110,
+            "cd": 110,
+            "type": 2,
+            "skillType": 1,
+            "target": 1,
+            "targetTypes": [
+                15
+            ],
+            "distance": 200,
+            "hurt": 5,
+            "recoveyAnger": 10
+        },
+        "110002": {
+            "skillId": 110002,
+            "firstCd": 110,
+            "cd": 110,
+            "type": 2,
+            "skillType": 1,
+            "target": 1,
+            "targetTypes": [
+                15
+            ],
+            "distance": 150,
+            "hurt": 5,
+            "recoveyAnger": 10
+        },
+        "110003": {
+            "skillId": 110003,
+            "firstCd": 100,
+            "cd": 100,
+            "type": 2,
+            "skillType": 1,
+            "target": 1,
+            "targetTypes": [
+                15
+            ],
+            "distance": 220,
+            "hurt": 5,
+            "recoveyAnger": 10
+        },
+        "110004": {
+            "skillId": 110004,
+            "firstCd": 100,
+            "cd": 100,
+            "type": 2,
+            "skillType": 1,
+            "target": 1,
+            "targetTypes": [
+                15
+            ],
+            "distance": 230,
+            "hurt": 5,
+            "recoveyAnger": 10
+        },
+        "110005": {
+            "skillId": 110005,
+            "firstCd": 100,
+            "cd": 100,
+            "type": 2,
+            "skillType": 1,
+            "target": 1,
+            "targetTypes": [
+                15
+            ],
+            "distance": 150,
+            "hurt": 5,
+            "recoveyAnger": 10
+        },
+        "110006": {
+            "skillId": 110006,
+            "firstCd": 120,
+            "cd": 120,
+            "type": 2,
+            "skillType": 1,
+            "target": 1,
+            "targetTypes": [
+                15
+            ],
+            "distance": 140,
+            "hurt": 5,
+            "recoveyAnger": 10
+        },
+        "110007": {
+            "skillId": 110007,
+            "firstCd": 120,
+            "cd": 120,
+            "type": 2,
+            "skillType": 1,
+            "target": 1,
+            "targetTypes": [
+                15
+            ],
+            "distance": 260,
+            "hurt": 5,
+            "recoveyAnger": 10
+        },
+        "110008": {
+            "skillId": 110008,
+            "firstCd": 130,
+            "cd": 130,
+            "type": 2,
+            "skillType": 1,
+            "target": 1,
+            "targetTypes": [
+                15
+            ],
+            "distance": 250,
+            "hurt": 5,
+            "recoveyAnger": 10
+        },
+        "110009": {
+            "skillId": 110009,
+            "firstCd": 100,
+            "cd": 100,
+            "type": 2,
+            "skillType": 1,
+            "target": 1,
+            "targetTypes": [
+                8
+            ],
+            "distance": 220,
+            "hurt": 5,
+            "recoveyAnger": 10
+        },
+        "110010": {
+            "skillId": 110010,
+            "firstCd": 100,
+            "cd": 100,
+            "type": 2,
+            "skillType": 1,
+            "target": 1,
+            "targetTypes": [
+                15
+            ],
+            "distance": 230,
+            "hurt": 5,
+            "recoveyAnger": 10
+        },
+        "120001": {
+            "skillId": 120001,
+            "firstCd": 100,
+            "cd": 100,
+            "type": 1,
+            "skillType": 2,
+            "target": 1,
+            "targetTypes": [
+                8
+            ],
+            "distance": 150,
+            "hurt": 5,
+            "recoveyAnger": 10
+        },
+        "120002": {
+            "skillId": 120002,
+            "firstCd": 150,
+            "cd": 150,
+            "type": 1,
+            "skillType": 2,
+            "target": 1,
+            "targetTypes": [
+                15
+            ],
+            "distance": 150,
+            "hurt": 5,
+            "recoveyAnger": 10
+        },
+        "120003": {
+            "skillId": 120003,
+            "firstCd": 120,
+            "cd": 120,
+            "type": 1,
+            "skillType": 2,
+            "target": 1,
+            "targetTypes": [
+                15
+            ],
+            "distance": 150,
+            "hurt": 5,
+            "recoveyAnger": 10
+        },
+        "120004": {
+            "skillId": 120004,
+            "firstCd": 110,
+            "cd": 110,
+            "type": 1,
+            "skillType": 2,
+            "target": 1,
+            "targetTypes": [
+                15
+            ],
+            "distance": 150,
+            "hurt": 5,
+            "recoveyAnger": 10
+        },
+        "120005": {
+            "skillId": 120005,
+            "firstCd": 90,
+            "cd": 90,
+            "type": 1,
+            "skillType": 2,
+            "target": 1,
+            "targetTypes": [
+                15
+            ],
+            "distance": 150,
+            "hurt": 5,
+            "recoveyAnger": 10
+        },
+        "120006": {
+            "skillId": 120006,
+            "firstCd": 123,
+            "cd": 123,
+            "type": 1,
+            "skillType": 2,
+            "target": 1,
+            "targetTypes": [
+                15
+            ],
+            "distance": 150,
+            "hurt": 5,
+            "recoveyAnger": 10
+        },
+        "120007": {
+            "skillId": 120007,
+            "firstCd": 100,
+            "cd": 100,
+            "type": 1,
+            "skillType": 2,
+            "target": 1,
+            "targetTypes": [
+                15
+            ],
+            "distance": 150,
+            "hurt": 5,
+            "recoveyAnger": 10
+        },
+        "120008": {
+            "skillId": 120008,
+            "firstCd": 100,
+            "cd": 100,
+            "type": 1,
+            "skillType": 2,
+            "target": 1,
+            "targetTypes": [
+                8
+            ],
+            "distance": 150,
+            "hurt": 5,
+            "recoveyAnger": 10
+        },
+        "120009": {
+            "skillId": 120009,
+            "firstCd": 100,
+            "cd": 100,
+            "type": 1,
+            "skillType": 2,
+            "target": 1,
+            "targetTypes": [
+                15
+            ],
+            "distance": 150,
+            "hurt": 5,
+            "recoveyAnger": 10
+        },
+        "120010": {
+            "skillId": 120010,
+            "firstCd": 100,
+            "cd": 100,
+            "type": 1,
+            "skillType": 2,
+            "target": 1,
+            "targetTypes": [
+                15
+            ],
+            "distance": 150,
+            "hurt": 5,
+            "recoveyAnger": 10
         }
     }
 }

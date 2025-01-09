@@ -9,10 +9,8 @@ export class HeroConfigVo {
     public maxHp: number;
     public maxMp: number;
     public comp: number;
-    public constructor(data: any) {
-        this.spineId = data.spineId;
-        this.maxHp = data.maxHp;
-        this.maxMp = data.maxMp;
-        this.comp = data.comp;
-    }
+    public layer: string;
+    public site: number;
+    public speed: number;
+    public skillIds: number[];
 }

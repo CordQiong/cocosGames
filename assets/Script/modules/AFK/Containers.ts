@@ -2,6 +2,8 @@ import { Component, Node } from "cc";
 import { HashMap } from "../../Common/maps/HashMap";
 import { NodeFactory } from "../../Common/NodeFactory";
 import { GameObject } from "../RPG/GameObject";
+import { GameConst } from "./GameConst";
+import EntityLayer from "../RPG/layer/EntityLayer";
 
 /**
  * @fileName Containers.ts
@@ -36,6 +38,9 @@ export class Containers extends GameObject {
             const container: Node = NodeFactory.instance.createNode();
             container.name = names[i];
             this.addChild(container);
+            if (names[i] == GameConst.ROLE_LAYER) {
+                container.addComponent(EntityLayer);
+            }
             this.containerMap.put(names[i], container);
 
         }
