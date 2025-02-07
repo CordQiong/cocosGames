@@ -3,6 +3,8 @@ import BaseView from '../../ui/BaseView';
 import { registerView } from '../../ui/ViewRegisterMgr';
 import { PanelType } from '../../ui/PanelEnum';
 import { LayerType } from '../../ui/LayerManager';
+import { FairyBirdGameManger } from './FairyBirdGameManger';
+import { FairyBirdConst } from './FairyBirdConst';
 const { ccclass, property } = _decorator;
 
 @ccclass('FairybirdMainPanel')
@@ -14,6 +16,7 @@ export class FairybirdMainPanel extends BaseView {
         for (let i: number = 0; i < count; i++) {
             console.log(`random value:${this.seedRandom()}`);
         }
+        FairyBirdGameManger.instance.transformGameState(FairyBirdConst.STATE_READING);
     }
 
     private seed: number = 5;

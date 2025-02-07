@@ -1,18 +1,18 @@
-import { _decorator, Component, director, game, instantiate, Node, Prefab, Vec3 } from 'cc';
+import { _decorator, Component, director, instantiate, Node, Prefab, Vec3 } from 'cc';
 import Player from './character/Player';
-import SpawnPoint from './transfer/SpawnPoint';
-import TransferDoor from './transfer/TransferDoor';
 import { Npc } from './character/Npc';
 import { Monster } from './character/Monster';
+import SpawnPoint from './transfer/SpawnPoint';
+import TransferDoor from './transfer/TransferDoor';
 const { ccclass, property } = _decorator;
 
-@ccclass('GameManager')
-export class GameManager extends Component {
-    
-    private static _instance: GameManager;
-    public static get instance(): GameManager {
+@ccclass('RPGGameManger')
+export class RPGGameManger extends Component {
 
-        return GameManager._instance;
+    private static _instance: RPGGameManger;
+    public static get instance(): RPGGameManger {
+
+        return RPGGameManger._instance;
     }
 
     /**
@@ -46,8 +46,8 @@ export class GameManager extends Component {
     public transferDoorPrefabs: Prefab[] = [];
 
     protected onLoad(): void {
-        if (!GameManager._instance) {
-            GameManager._instance = this;
+        if (!RPGGameManger._instance) {
+            RPGGameManger._instance = this;
             director.addPersistRootNode(this.node);
             this.init();
         } else {
@@ -118,16 +118,16 @@ export class GameManager extends Component {
         return transferDoor;
     }
 
-    public init(): void{
-        
+    public init(): void {
+
     }
-    
+
     start() {
 
     }
 
     update(deltaTime: number) {
-        
+
     }
 }
 

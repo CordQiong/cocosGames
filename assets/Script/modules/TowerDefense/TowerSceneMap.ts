@@ -34,8 +34,8 @@ const { ccclass, property } = _decorator;
 @ccclass('TowerSceneMap')
 export class TowerSceneMap extends SceneBase {
 
-    private static _instance:TowerSceneMap = null;
-    public static get instance():TowerSceneMap {
+    private static _instance: TowerSceneMap = null;
+    public static get instance(): TowerSceneMap {
         return this._instance;
     }
     @property(Prefab)
@@ -61,7 +61,7 @@ export class TowerSceneMap extends SceneBase {
     private boss: Boss = null;
 
     protected onLoad() {
-       // this.mapLayer =
+        // this.mapLayer =
         TowerSceneMap._instance = this;
     }
 
@@ -73,6 +73,11 @@ export class TowerSceneMap extends SceneBase {
         // this.winSize = view.getVisibleSize();
 
 
+    }
+
+    public setMapId(mapId: number, mapLoadModel?: MapLoadModel): void {
+        super.setMapId(mapId, mapLoadModel);
+        TowerLauncher.instance.mapId = mapId;
     }
 
 
@@ -118,6 +123,16 @@ export class TowerSceneMap extends SceneBase {
         TowerLauncher.instance.addBoss(boss);
     }
 
+    private adapter(): void {
+        const uiTransform: UITransform = this.node.getComponent(UITransform);
+        const width: number = uiTransform ? uiTransform.width : 960;
+        const height: number = uiTransform ? uiTransform.height : 640;
+        const scale: number = Math.min(750 / width, 1335 / height);
+        this.node.setScale(scale, scale);
+
+        this.node.setPosition(math.v3(-(width * scale) / 2, -(height * scale) / 2));
+    }
+
     protected initMapData(mapData: MapData) {
         this.isInit = false;
         let len: number = mapData.roadDataArr.length;
@@ -135,12 +150,14 @@ export class TowerSceneMap extends SceneBase {
             }
         }
 
-        const uiTransform:UITransform = this.node.getComponent(UITransform);
-        const width:number = uiTransform ? uiTransform.width : 0;
-        const height:number = uiTransform ? uiTransform.height : 0;
-        this.node.setPosition(math.v3(-width / 2, -height / 2));
+        const uiTransform: UITransform = this.node.getComponent(UITransform);
+        const width: number = uiTransform ? uiTransform.width : 0;
+        const height: number = uiTransform ? uiTransform.height : 0;
 
-        TowerLauncher.instance.initQuadTree(width,height);
+
+        this.adapter()
+
+        TowerLauncher.instance.initQuadTree(width, height);
 
         this.spawnPointDatas = [];
         this.entityLayer.node.removeAllChildren();
@@ -270,7 +287,7 @@ export class TowerSceneMap extends SceneBase {
 
         // var roadNodeArr: RoadNode[] = PathFindingAgent.instance.seekPath(math.v2(node.position.x, node.position.y), math.v2(this.boss.x, this.boss.y));
 
-        enemy.navTo(this.boss.x,this.boss.y);
+        enemy.navTo(this.boss.x, this.boss.y);
         // this.enemyList.push(enemy);
 
 

@@ -9,6 +9,7 @@ import { viewManager, ViewManager } from "db://assets/Script/ui/ViewManager";
 import { TowerGameScene } from "db://assets/Script/modules/TowerDefense/TowerGameScene";
 import { FairybirdMainPanel } from '../fairybird/FairybirdMainPanel';
 import { AFKGame } from '../AFK/AFKGame';
+import { RPGGameScencePanel } from '../RPG/RPGGameScencePanel';
 
 const { ccclass, property } = _decorator;
 
@@ -21,8 +22,8 @@ export class MainPanel extends BaseView {
 
     init(...args) {
         super.init(...args);
-
-        let childs: Node[] = this.node.children;
+        const node: Node = Utils.FindChildByName(this.node, "btns")
+        let childs: Node[] = node.children;
         for (let index = 0; index < childs.length; index++) {
             const element = childs[index];
             if (element.name.indexOf('btn_') != -1) {
@@ -41,7 +42,7 @@ export class MainPanel extends BaseView {
                         viewManager.open(TowerGameScene)
                         break;
                     case "rpg":
-                        console.log("点击rpg")
+                        viewManager.open(RPGGameScencePanel)
                         break;
                     case "fb":
                         viewManager.open(FairybirdMainPanel)

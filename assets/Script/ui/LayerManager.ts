@@ -45,12 +45,13 @@ export default class LayerManager {
         if (!uiTr) {
             uiTr = node.addComponent(UITransform)
         }
-
+        node.parent = parent;
         uiTr.setContentSize(this.width, this.height);
         let widget = node.addComponent(Widget);
+        widget.isAlignTop = widget.isAlignBottom = widget.isAlignLeft = widget.isAlignRight = true;
         widget.left = widget.right = widget.top = widget.bottom = 0;
         widget.target = parent;
-        node.parent = parent;
+
         widget.updateAlignment();
         this.layers[layer] = node;
         return node;

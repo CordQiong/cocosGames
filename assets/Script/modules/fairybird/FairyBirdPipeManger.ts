@@ -1,4 +1,7 @@
 import { _decorator, CCInteger, Component, instantiate, math, Node, NodePool, Prefab } from 'cc';
+import { FairyBirdPipe } from './FairyBirdPipe';
+import { FairyBirdConst } from './FairyBirdConst';
+import { FairyBirdGameManger } from './FairyBirdGameManger';
 const { ccclass, property } = _decorator;
 
 /**
@@ -19,11 +22,12 @@ export class FairyBirdPipeManger extends Component {
     public prafab: Prefab;
 
     @property(CCInteger)
-    public rate: number = 1.5;
+    public rate: number = 2;
 
     private _timer: number = 0;
 
     private _nodePool: NodePool;
+    ;
 
     protected onLoad(): void {
         FairyBirdPipeManger._instance = this;
@@ -34,6 +38,8 @@ export class FairyBirdPipeManger extends Component {
     }
 
     private cratePipe(): Node {
+        const node: Node = instantiate(this.prafab);
+        return node;
         if (this._nodePool.size() > 0) {
             return this._nodePool.get();
         } else {
@@ -43,19 +49,28 @@ export class FairyBirdPipeManger extends Component {
     }
 
     update(deltaTime: number) {
+        if (FairyBirdGameManger.instance.gameState != FairyBirdConst.STATE_GAMEING) {
+            return;
+        }
         this._timer += deltaTime;
         if (this._timer >= this.rate) {
             this._timer = 0;
             const pipe: Node = this.cratePipe();
             this.node.addChild(pipe);
             let p = this.node.getWorldPosition()
-            let y: number = math.randomRangeInt(-100, 140);
+            let y: number = math.randomRangeInt(-100, 120);
             pipe.setWorldPosition(p);
-
-            let p2 = this.node.getPosition();
-            pipe.setPosition(p2.x, y);
+            pipe.getComponent(FairyBirdPipe).instanceCoin();
+            // let p2 = this.node.getPosition();
+            pipe.setPosition(0, y);
 
         }
+    }
+
+    public removeAllPipe(): void {
+        this.scheduleOnce(() => {
+            this.node.removeAllChildren();
+        }, 0)
     }
 
     public relasePipe(node: Node): boolean {

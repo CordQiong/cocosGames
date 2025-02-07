@@ -16,20 +16,21 @@ import MapLayer from "db://assets/Script/modules/RPG/layer/MapLayer";
 import EntityLayer from "db://assets/Script/modules/RPG/layer/EntityLayer";
 import MapData from "db://assets/Script/modules/RPG/map/MapData";
 import MapParams from "db://assets/Script/modules/RPG/info/MapParams";
-import {MapItemType, MapLoadModel} from "db://assets/Script/modules/RPG/Enum";
+import { MapItemType, MapLoadModel } from "db://assets/Script/modules/RPG/Enum";
 import PathFindingAgent from "db://assets/Script/modules/RPG/map/PathFindingAgent";
-import {TowerLauncher} from "db://assets/Script/modules/TowerDefense/TowerLauncher";
+import { TowerLauncher } from "db://assets/Script/modules/TowerDefense/TowerLauncher";
+import { RootLauncher } from "./RootLauncher";
 const { ccclass, property } = _decorator;
 @ccclass("SceneBase")
-export class SceneBase extends Component{
+export class SceneBase extends Component {
     @property(MapLayer)
     public mapLayer: MapLayer = null;
 
     @property(EntityLayer)
     public entityLayer: EntityLayer = null;
 
-    @property(Camera)
-    public camera: Camera = null;
+    // @property(Camera)
+    // public camera: Camera = null;
 
 
     private _mapData: MapData;
@@ -55,11 +56,10 @@ export class SceneBase extends Component{
 
     public setMapId(mapId: number, mapLoadModel: MapLoadModel = MapLoadModel.single) {
         this._mapId = mapId;
-        TowerLauncher.instance.mapId = mapId;
         this.loadMap(mapId);
     }
 
-    public get mapId(): number{
+    public get mapId(): number {
         return this._mapId;
     }
 
@@ -71,12 +71,12 @@ export class SceneBase extends Component{
         }
     }
 
-    protected getMapPath(mapId:number):string{
+    protected getMapPath(mapId: number): string {
         return ""
     }
 
     protected loadSingleMap(mapId: number) {
-        var dataPath: string =  this.getMapPath(mapId); //`Map/map${mapId}/map${mapId}`;
+        var dataPath: string = this.getMapPath(mapId); //`Map/map${mapId}/map${mapId}`;
         resources.load(dataPath, JsonAsset, (error: Error, res: JsonAsset) => {
             if (error != null) {
                 console.log("加载地图数据失败 path = ", dataPath, "error", error);
@@ -102,7 +102,7 @@ export class SceneBase extends Component{
     public init(mapData: MapData, bgTexture: Texture2D): void {
         this._mapData = mapData;
 
-        this._mapParams = this.getMapParams(mapData, bgTexture,MapLoadModel.single);
+        this._mapParams = this.getMapParams(mapData, bgTexture, MapLoadModel.single);
         this.mapLayer.init(this._mapParams);
 
         PathFindingAgent.instance.init(mapData);
@@ -170,9 +170,9 @@ export class SceneBase extends Component{
         } else if (this.targetPos.y < 0) {
             this.targetPos.y = 0;
         }
-
-        this.targetPos.z = this.camera.node.position.z;
-        this.camera.node.position = this.targetPos;
+        const camera: Camera = RootLauncher.instance.mainCamera;
+        this.targetPos.z = camera.node.position.z;
+        camera.node.position = this.targetPos;
 
         // if (this._mapParams.mapLoadModel == MapLoadModel.slices) {
         //     this.mapLayer.loadSliceImage(this.targetPos.x, this.targetPos.y);
@@ -184,7 +184,7 @@ export class SceneBase extends Component{
      * @param targetNode
      * @param dt
      */
-    public followTarget(targetNode:Node,dt: number) {
+    public followTarget(targetNode: Node, dt: number) {
         if (targetNode == null) {
             return;
         }
@@ -203,14 +203,13 @@ export class SceneBase extends Component{
         } else if (this.targetPos.y < 0) {
             this.targetPos.y = 0;
         }
+        const camera: Camera = RootLauncher.instance.mainCamera;
 
-
-        this.targetPos.z = this.camera.node.position.z;
-
+        this.targetPos.z = camera.node.position.z;
         //摄像机平滑跟随
-        this.targetPos = this.camera.node.position.clone().lerp(this.targetPos, dt * 2.0);
+        this.targetPos = camera.node.position.clone().lerp(this.targetPos, dt * 2.0);
         // this.camera.node.position = this.targetPos;
-        this.camera.node.setPosition(this.targetPos);
+        camera.node.setPosition(this.targetPos);
 
         // if (this._mapParams.mapLoadModel == MapLoadModel.slices) {
         //     this.mapLayer.loadSliceImage(this.targetPos.x, this.targetPos.y);

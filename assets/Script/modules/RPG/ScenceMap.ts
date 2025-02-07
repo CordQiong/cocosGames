@@ -1,14 +1,15 @@
-import {_decorator, EventTouch, Node, Vec3} from 'cc';
+import { _decorator, EventTouch, Node, Vec3 } from 'cc';
 import MapData from './map/MapData';
-import {MapItemType, MapLoadModel} from './Enum';
+import { MapItemType, MapLoadModel } from './Enum';
 import Player from './character/Player';
-import {EditMonsterData, EditNpcData, EditSpawnPointData, EditTransferData} from './EditObjData';
+import { EditMonsterData, EditNpcData, EditSpawnPointData, EditTransferData } from './EditObjData';
 import SpawnPoint from './transfer/SpawnPoint';
-import {GameManager} from './GameManager';
 import TransferDoor from './transfer/TransferDoor';
-import {Monster} from './character/Monster';
-import {Npc} from './character/Npc';
-import {SceneBase} from "db://assets/Script/modules/SceneBase";
+import { Monster } from './character/Monster';
+import { Npc } from './character/Npc';
+import { SceneBase } from "db://assets/Script/modules/SceneBase";
+import { RootLauncher } from '../RootLauncher';
+import { RPGGameManger } from './RPGGameManger';
 
 const { ccclass, property } = _decorator;
 
@@ -70,7 +71,7 @@ export class ScenceMap extends SceneBase {
         //     console.log('全局点击的屏幕坐标:', screenPoint);
         // }, this);
 
-        this.setMapId(1,MapLoadModel.single);
+        this.setMapId(1, MapLoadModel.single);
     }
 
     // public set mapId(value: number) {
@@ -115,7 +116,7 @@ export class ScenceMap extends SceneBase {
     // }
 
     protected getMapPath(mapId: number): string {
-        return `Map/map${mapId}/map${mapId}`
+        return `map/map${mapId}/map${mapId}`
     }
 
     protected initMapData(mapData: MapData) {
@@ -127,7 +128,7 @@ export class ScenceMap extends SceneBase {
     }
 
 
-    private initMapElement(): void{
+    private initMapElement(): void {
         const mapItems: any[] = this.mapData.mapItems;
         if (!mapItems) {
             return;
@@ -152,7 +153,7 @@ export class ScenceMap extends SceneBase {
     * 初始化Npc
     */
     private initNpc(editData: EditNpcData) {
-        var npc: Npc = GameManager.instance.getNPC();
+        var npc: Npc = RPGGameManger.instance.getNPC();
         npc.node.parent = this.entityLayer.node;
         npc.initEditData(editData);
         npc.init();
@@ -163,7 +164,7 @@ export class ScenceMap extends SceneBase {
      * 初始化怪物
      */
     private initMonster(editData: EditMonsterData) {
-        var monster: Monster = GameManager.instance.getMonster();
+        var monster: Monster = RPGGameManger.instance.getMonster();
         monster.node.parent = this.entityLayer.node;
         monster.initEditData(editData);
         monster.init();
@@ -173,14 +174,14 @@ export class ScenceMap extends SceneBase {
      * 初始化传送门
      */
     private initTransferDoor(editData: EditTransferData) {
-        var transferDoor: TransferDoor = GameManager.instance.getTransferDoor(editData.transferType);
+        var transferDoor: TransferDoor = RPGGameManger.instance.getTransferDoor(editData.transferType);
         transferDoor.node.parent = this.entityLayer.node;
         transferDoor.initEditData(editData);
         transferDoor.init();
     }
 
     private initSpawnPoint(editData: EditSpawnPointData) {
-        var spawnPoint: SpawnPoint = GameManager.instance.getSpawnPoint();
+        var spawnPoint: SpawnPoint = RPGGameManger.instance.getSpawnPoint();
         spawnPoint.node.parent = this.entityLayer.node;
         spawnPoint.initEditData(editData);
         spawnPoint.init();
@@ -189,7 +190,7 @@ export class ScenceMap extends SceneBase {
     public initPlayer() {
         var spawnPoint: SpawnPoint = this.getSpawnPoint(0);
 
-        this.player = GameManager.instance.getPlayer();
+        this.player = RPGGameManger.instance.getPlayer();
         this.player.node.parent = this.entityLayer.node;
         this.player.node.position = spawnPoint != null ? spawnPoint.node.position : new Vec3(1000, 1000, 0); //如果找得到出生点就初始化在出生点的位置，否则默认一个出生位置点给玩家，防止报错。
     }
@@ -225,7 +226,7 @@ export class ScenceMap extends SceneBase {
         this.transferDoorList = this.getComponentsInChildren(TransferDoor);
         this.npcList = this.getComponentsInChildren(Npc);
         this.monsterList = this.getComponentsInChildren(Monster);
-    } 
+    }
 
     /**
      * 获得地图参数
@@ -330,10 +331,11 @@ export class ScenceMap extends SceneBase {
         this.setViewToPoint(this.player.node.position.x, this.player.node.position.y);
     }
 
-    private onMapTouch(event: EventTouch): void { 
+    private onMapTouch(event: EventTouch): void {
         var touPos: Vec3 = new Vec3(event.getUILocation().x, event.getUILocation().y);
         var targetPos: Vec3 = new Vec3();
-        Vec3.add(targetPos, this.camera.node.position, touPos); //计算点击地图的位置，计算结果输出到targetPos
+        const cameraPos: Vec3 = RootLauncher.instance.mainCamera.node.position;
+        Vec3.add(targetPos, cameraPos, touPos); //计算点击地图的位置，计算结果输出到targetPos
         console.log("点击的像素坐标", targetPos.x, targetPos.y);
         this.player.navTo(targetPos.x, targetPos.y);
         // console.log(this.player);
@@ -344,8 +346,8 @@ export class ScenceMap extends SceneBase {
         if (!this.isInit) {
             return;
         }
-        if(this.player){
-            this.followTarget(this.player.node,deltaTime);
+        if (this.player) {
+            this.followTarget(this.player.node, deltaTime);
         }
         // this.followPlayer(deltaTime);
 
