@@ -1,9 +1,11 @@
-import { _decorator, Component, Node } from 'cc';
+import { _decorator, Button, Component, Node } from 'cc';
 import BaseView from '../../ui/BaseView';
 import { registerView } from '../../ui/ViewRegisterMgr';
 import { PanelType } from '../../ui/PanelEnum';
 import { LayerType } from '../../ui/LayerManager';
 import ViewConst from '../../ui/ViewConst';
+import Utils from '../../Common/Utils';
+import { viewManager } from '../../ui/ViewManager';
 const { ccclass, property } = _decorator;
 
 /**
