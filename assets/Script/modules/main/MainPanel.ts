@@ -10,6 +10,7 @@ import { TowerGameScene } from "db://assets/Script/modules/TowerDefense/TowerGam
 import { FairybirdMainPanel } from '../fairybird/FairybirdMainPanel';
 import { AFKGame } from '../AFK/AFKGame';
 import { RPGGameScencePanel } from '../RPG/RPGGameScencePanel';
+import {RedPointPanel} from "db://assets/Script/modules/RedPointPanel";
 
 const { ccclass, property } = _decorator;
 
@@ -49,6 +50,9 @@ export class MainPanel extends BaseView {
                         break;
                     case "afk":
                         viewManager.open(AFKGame)
+                        break;
+                    case "red":
+                        viewManager.open(RedPointPanel);
                         break;
 
                     default:

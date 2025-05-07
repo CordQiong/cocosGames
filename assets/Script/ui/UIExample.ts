@@ -12,8 +12,8 @@ const { ccclass, property } = _decorator;
 export class UIExample extends Component {
     start() {
         LayerManager.init(this.node);
-        // viewManager.open(MainPanel, "测试测试");
-        viewManager.open(RedPointPanel)
+        viewManager.open(MainPanel, "测试测试");
+        // viewManager.open(RedPointPanel)
     }
 
     update(deltaTime: number) {

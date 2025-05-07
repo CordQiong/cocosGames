@@ -2002,7 +2002,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "btn_compose",
+    "_name": "btn_red",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": {
@@ -2121,8 +2121,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 100,
-      "height": 40
+      "width": 177.8,
+      "height": 50.4
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2157,14 +2157,14 @@
       "b": 0,
       "a": 255
     },
-    "_string": "合成",
+    "_string": "红点系统",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 40,
     "_fontSize": 40,
     "_fontFamily": "Arial",
     "_lineHeight": 40,
-    "_overflow": 1,
+    "_overflow": 3,
     "_enableWrapText": false,
     "_font": null,
     "_isSystemFontUsed": true,
