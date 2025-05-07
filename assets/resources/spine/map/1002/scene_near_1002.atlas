@@ -1,0 +1,69 @@
+
+scene_near_1002.png
+size: 875,941
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+deng
+  rotate: false
+  xy: 852, 915
+  size: 20, 24
+  orig: 20, 24
+  offset: 0, 0
+  index: -1
+dengguang
+  rotate: false
+  xy: 832, 520
+  size: 38, 44
+  orig: 38, 44
+  offset: 0, 0
+  index: -1
+dengguang2
+  rotate: false
+  xy: 726, 451
+  size: 104, 113
+  orig: 104, 113
+  offset: 0, 0
+  index: -1
+dengguang4
+  rotate: false
+  xy: 781, 409
+  size: 42, 40
+  orig: 42, 40
+  offset: 0, 0
+  index: -1
+dengshen
+  rotate: false
+  xy: 726, 336
+  size: 53, 113
+  orig: 53, 113
+  offset: 0, 0
+  index: -1
+jianzhu
+  rotate: false
+  xy: 2, 377
+  size: 722, 562
+  orig: 722, 562
+  offset: 0, 0
+  index: -1
+shu1
+  rotate: false
+  xy: 726, 702
+  size: 124, 237
+  orig: 124, 237
+  offset: 0, 0
+  index: -1
+shu3
+  rotate: false
+  xy: 726, 566
+  size: 147, 134
+  orig: 147, 134
+  offset: 0, 0
+  index: -1
+zhongjing
+  rotate: false
+  xy: 2, 2
+  size: 722, 373
+  orig: 722, 373
+  offset: 0, 0
+  index: -1

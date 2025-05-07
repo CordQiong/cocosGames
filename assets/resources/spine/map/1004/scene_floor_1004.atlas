@@ -1,0 +1,160 @@
+
+scene_floor_1004.png
+size: 1446,889
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dimiam
+  rotate: false
+  xy: 2, 765
+  size: 722, 122
+  orig: 722, 122
+  offset: 0, 0
+  index: -1
+jiazi
+  rotate: false
+  xy: 726, 759
+  size: 342, 128
+  orig: 342, 128
+  offset: 0, 0
+  index: -1
+shui_0000
+  rotate: false
+  xy: 2, 689
+  size: 720, 74
+  orig: 720, 1020
+  offset: 0, 0
+  index: -1
+shui_0001
+  rotate: false
+  xy: 2, 613
+  size: 720, 74
+  orig: 720, 1020
+  offset: 0, 0
+  index: -1
+shui_0002
+  rotate: false
+  xy: 2, 537
+  size: 720, 74
+  orig: 720, 1020
+  offset: 0, 0
+  index: -1
+shui_0003
+  rotate: false
+  xy: 2, 461
+  size: 720, 74
+  orig: 720, 1020
+  offset: 0, 0
+  index: -1
+shui_0004
+  rotate: false
+  xy: 2, 385
+  size: 720, 74
+  orig: 720, 1020
+  offset: 0, 0
+  index: -1
+shui_0005
+  rotate: false
+  xy: 2, 309
+  size: 720, 74
+  orig: 720, 1020
+  offset: 0, 0
+  index: -1
+shui_0006
+  rotate: false
+  xy: 2, 233
+  size: 720, 74
+  orig: 720, 1020
+  offset: 0, 0
+  index: -1
+shui_0007
+  rotate: false
+  xy: 2, 157
+  size: 720, 74
+  orig: 720, 1020
+  offset: 0, 0
+  index: -1
+shui_0008
+  rotate: false
+  xy: 2, 81
+  size: 720, 74
+  orig: 720, 1020
+  offset: 0, 0
+  index: -1
+shui_0009
+  rotate: false
+  xy: 2, 5
+  size: 720, 74
+  orig: 720, 1020
+  offset: 0, 0
+  index: -1
+shui_0010
+  rotate: false
+  xy: 724, 683
+  size: 720, 74
+  orig: 720, 1020
+  offset: 0, 0
+  index: -1
+shui_0011
+  rotate: false
+  xy: 724, 607
+  size: 720, 74
+  orig: 720, 1020
+  offset: 0, 0
+  index: -1
+shui_0012
+  rotate: false
+  xy: 724, 531
+  size: 720, 74
+  orig: 720, 1020
+  offset: 0, 0
+  index: -1
+shui_0013
+  rotate: false
+  xy: 724, 455
+  size: 720, 74
+  orig: 720, 1020
+  offset: 0, 0
+  index: -1
+shui_0014
+  rotate: false
+  xy: 724, 379
+  size: 720, 74
+  orig: 720, 1020
+  offset: 0, 0
+  index: -1
+shui_0015
+  rotate: false
+  xy: 724, 303
+  size: 720, 74
+  orig: 720, 1020
+  offset: 0, 0
+  index: -1
+shui_0016
+  rotate: false
+  xy: 724, 227
+  size: 720, 74
+  orig: 720, 1020
+  offset: 0, 0
+  index: -1
+shui_0017
+  rotate: false
+  xy: 724, 152
+  size: 720, 73
+  orig: 720, 1020
+  offset: 0, 0
+  index: -1
+shui_0018
+  rotate: false
+  xy: 724, 77
+  size: 720, 73
+  orig: 720, 1020
+  offset: 0, 0
+  index: -1
+shui_0019
+  rotate: false
+  xy: 724, 2
+  size: 720, 73
+  orig: 720, 1020
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,125 @@
+
+scene_far_1001.png
+size: 1903,1001
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+123
+  rotate: false
+  xy: 726, 628
+  size: 722, 371
+  orig: 722, 407
+  offset: 0, 0
+  index: -1
+beijing
+  rotate: false
+  xy: 2, 97
+  size: 722, 902
+  orig: 722, 902
+  offset: 0, 0
+  index: -1
+bird_0000
+  rotate: false
+  xy: 765, 30
+  size: 35, 31
+  orig: 282, 282
+  offset: 124, 116
+  index: -1
+bird_0001
+  rotate: false
+  xy: 726, 2
+  size: 37, 26
+  orig: 282, 282
+  offset: 123, 122
+  index: -1
+bird_0002
+  rotate: false
+  xy: 843, 11
+  size: 41, 18
+  orig: 282, 282
+  offset: 121, 136
+  index: -1
+bird_0003
+  rotate: false
+  xy: 828, 31
+  size: 26, 30
+  orig: 282, 282
+  offset: 128, 136
+  index: -1
+bird_0004
+  rotate: false
+  xy: 802, 30
+  size: 24, 31
+  orig: 282, 282
+  offset: 129, 136
+  index: -1
+bird_0005
+  rotate: false
+  xy: 856, 33
+  size: 30, 28
+  orig: 282, 282
+  offset: 127, 136
+  index: -1
+bird_0006
+  rotate: false
+  xy: 805, 6
+  size: 36, 22
+  orig: 282, 282
+  offset: 125, 136
+  index: -1
+bird_0007
+  rotate: false
+  xy: 765, 3
+  size: 38, 25
+  orig: 282, 282
+  offset: 124, 124
+  index: -1
+bird_0008
+  rotate: false
+  xy: 726, 30
+  size: 37, 31
+  orig: 282, 282
+  offset: 124, 116
+  index: -1
+fengwei
+  rotate: false
+  xy: 726, 379
+  size: 722, 247
+  orig: 722, 247
+  offset: 0, 0
+  index: -1
+fengwei123
+  rotate: false
+  xy: 2, 4
+  size: 722, 91
+  orig: 722, 91
+  offset: 0, 0
+  index: -1
+shu12
+  rotate: false
+  xy: 1450, 548
+  size: 333, 451
+  orig: 333, 451
+  offset: 0, 0
+  index: -1
+shu13
+  rotate: false
+  xy: 1599, 167
+  size: 302, 379
+  orig: 302, 379
+  offset: 0, 0
+  index: -1
+shu14
+  rotate: false
+  xy: 991, 77
+  size: 606, 300
+  orig: 606, 300
+  offset: 0, 0
+  index: -1
+shu15
+  rotate: false
+  xy: 726, 63
+  size: 263, 314
+  orig: 263, 359
+  offset: 0, 0
+  index: -1

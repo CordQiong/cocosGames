@@ -1,4 +1,4 @@
-import { TowerGameScene } from "db://assets/Script/modules/TowerDefense/TowerGameScene";
+import {RedPointPanel} from "db://assets/Script/modules/RedPointPanel";
 
 export enum PanelType {
     none = 0,
@@ -10,4 +10,6 @@ export enum PanelType {
     AFKGame = 6,
     AFKResultPanel = 7,
     RPGGameScencePanel = 8,
+    ComposePanel = 9,
+    RedPointPanel = 10,
 }

@@ -1,0 +1,167 @@
+
+scene_far_1003.png
+size: 1962,1922
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+beijing
+  rotate: false
+  xy: 2, 898
+  size: 722, 1022
+  orig: 722, 1022
+  offset: 0, 0
+  index: -1
+guangta
+  rotate: false
+  xy: 2, 405
+  size: 344, 491
+  orig: 344, 491
+  offset: 0, 0
+  index: -1
+guangta0000
+  rotate: false
+  xy: 1450, 960
+  size: 257, 318
+  orig: 720, 1020
+  offset: 362, 618
+  index: -1
+guangta0001
+  rotate: false
+  xy: 608, 576
+  size: 255, 320
+  orig: 720, 1020
+  offset: 363, 616
+  index: -1
+guangta0002
+  rotate: false
+  xy: 1385, 579
+  size: 254, 320
+  orig: 720, 1020
+  offset: 363, 616
+  index: -1
+guangta0003
+  rotate: false
+  xy: 1710, 1279
+  size: 250, 318
+  orig: 720, 1020
+  offset: 366, 618
+  index: -1
+guangta0004
+  rotate: false
+  xy: 1710, 1599
+  size: 250, 321
+  orig: 720, 1020
+  offset: 367, 615
+  index: -1
+guangta0005
+  rotate: false
+  xy: 2, 84
+  size: 257, 319
+  orig: 720, 1020
+  offset: 362, 617
+  index: -1
+guangta0006
+  rotate: false
+  xy: 865, 582
+  size: 258, 317
+  orig: 720, 1020
+  offset: 362, 619
+  index: -1
+guangta0007
+  rotate: false
+  xy: 1125, 582
+  size: 258, 317
+  orig: 720, 1020
+  offset: 362, 619
+  index: -1
+guangta0008
+  rotate: false
+  xy: 608, 259
+  size: 258, 315
+  orig: 720, 1020
+  offset: 362, 621
+  index: -1
+guangta0009
+  rotate: false
+  xy: 1450, 1600
+  size: 258, 320
+  orig: 720, 1020
+  offset: 362, 616
+  index: -1
+guangta0010
+  rotate: false
+  xy: 868, 262
+  size: 257, 318
+  orig: 720, 1020
+  offset: 362, 618
+  index: -1
+guangta0011
+  rotate: false
+  xy: 1127, 261
+  size: 255, 319
+  orig: 720, 1020
+  offset: 363, 617
+  index: -1
+guangta0012
+  rotate: false
+  xy: 1644, 319
+  size: 254, 317
+  orig: 720, 1020
+  offset: 363, 619
+  index: -1
+guangta0013
+  rotate: false
+  xy: 1709, 962
+  size: 250, 315
+  orig: 720, 1020
+  offset: 366, 621
+  index: -1
+guangta0014
+  rotate: false
+  xy: 1644, 2
+  size: 248, 315
+  orig: 720, 1020
+  offset: 368, 621
+  index: -1
+guangta0015
+  rotate: false
+  xy: 1641, 638
+  size: 254, 320
+  orig: 720, 1020
+  offset: 368, 616
+  index: -1
+guangta0016
+  rotate: false
+  xy: 348, 578
+  size: 258, 318
+  orig: 720, 1020
+  offset: 362, 618
+  index: -1
+guangta0017
+  rotate: false
+  xy: 1384, 260
+  size: 258, 317
+  orig: 720, 1020
+  offset: 362, 619
+  index: -1
+guangta0018
+  rotate: false
+  xy: 1450, 1280
+  size: 258, 318
+  orig: 720, 1020
+  offset: 362, 618
+  index: -1
+guangta0019
+  rotate: false
+  xy: 348, 260
+  size: 258, 316
+  orig: 720, 1020
+  offset: 362, 620
+  index: -1
+mogu5
+  rotate: false
+  xy: 726, 901
+  size: 722, 1019
+  orig: 722, 1019
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,69 @@
+
+scene_far_1002.png
+size: 1409,1026
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+shu4
+  rotate: false
+  xy: 999, 110
+  size: 91, 202
+  orig: 91, 202
+  offset: 0, 0
+  index: -1
+shu5
+  rotate: false
+  xy: 1307, 444
+  size: 68, 96
+  orig: 68, 96
+  offset: 0, 0
+  index: -1
+star2
+  rotate: false
+  xy: 726, 5
+  size: 36, 35
+  orig: 720, 1020
+  offset: 342, 492
+  index: -1
+yuanjing
+  rotate: false
+  xy: 2, 2
+  size: 722, 1022
+  orig: 722, 1022
+  offset: 0, 0
+  index: -1
+yue
+  rotate: false
+  xy: 726, 42
+  size: 271, 270
+  orig: 720, 1020
+  offset: 71, 501
+  index: -1
+yueguang
+  rotate: false
+  xy: 726, 314
+  size: 433, 435
+  orig: 433, 435
+  offset: 0, 0
+  index: -1
+yueguang2
+  rotate: false
+  xy: 726, 751
+  size: 681, 273
+  orig: 681, 290
+  offset: 0, 17
+  index: -1
+yueguang3
+  rotate: false
+  xy: 1161, 542
+  size: 217, 207
+  orig: 217, 207
+  offset: 0, 0
+  index: -1
+yueliang
+  rotate: false
+  xy: 1161, 398
+  size: 144, 142
+  orig: 144, 142
+  offset: 0, 0
+  index: -1

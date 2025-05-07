@@ -169,6 +169,7 @@ export default class AssetMgr {
     }
 
 
+
     /**
      * base64转纹理
      * @param data - base64编码的字符串

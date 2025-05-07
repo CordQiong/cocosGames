@@ -1,0 +1,55 @@
+
+scene_near_1004.png
+size: 912,621
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bu
+  rotate: false
+  xy: 726, 83
+  size: 171, 123
+  orig: 171, 123
+  offset: 0, 0
+  index: -1
+guang
+  rotate: false
+  xy: 726, 387
+  size: 184, 232
+  orig: 720, 1020
+  offset: 255, 198
+  index: -1
+luoxue
+  rotate: false
+  xy: 792, 50
+  size: 41, 31
+  orig: 41, 31
+  offset: 0, 0
+  index: -1
+shenzi1
+  rotate: false
+  xy: 726, 208
+  size: 177, 177
+  orig: 177, 177
+  offset: 0, 0
+  index: -1
+shenzi2
+  rotate: false
+  xy: 726, 8
+  size: 64, 73
+  orig: 64, 73
+  offset: 0, 0
+  index: -1
+xue
+  rotate: false
+  xy: 792, 30
+  size: 18, 18
+  orig: 50, 50
+  offset: 16, 16
+  index: -1
+zhongjing
+  rotate: false
+  xy: 2, 2
+  size: 722, 617
+  orig: 722, 617
+  offset: 0, 0
+  index: -1
